@@ -1,0 +1,1748 @@
+[
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "DNSの役割は？",
+        "answer":  "ホスト名とIPアドレスを対応付け、名前解決を行うこと。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "DNSが通常の名前解決で使うトランスポート層プロトコルとポート番号は？",
+        "answer":  "UDP 53番。",
+        "note":  "ゾーン転送はTCP 53番",
+        "importance":  "★★★",
+        "tag":  "ポート"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "正引きとは？",
+        "answer":  "ホスト名からIPアドレスを求めること。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "用語"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "逆引きとは？",
+        "answer":  "IPアドレスからホスト名を求めること。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "用語"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "FQDNとは？",
+        "answer":  "ルートからホスト名までを省略せずに表した完全修飾ドメイン名。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "用語"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "DNSの問い合わせは、基本的にどの順でたどる？",
+        "answer":  "リゾルバ → ルートDNS → TLDのDNS → 下位の権威DNS → IPアドレス取得。",
+        "note":  "実際にはキャッシュが使われる",
+        "importance":  "★★★",
+        "tag":  "流れ"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "プライマリDNSとセカンダリDNSの違いは？",
+        "answer":  "プライマリはゾーンデータの基準、セカンダリはプライマリから情報を取得して冗長化する。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "比較"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "Aレコードの役割は？",
+        "answer":  "ホスト名をIPv4アドレスに対応付ける。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "AAAAレコードの役割は？",
+        "answer":  "ホスト名をIPv6アドレスに対応付ける。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "MXレコードの役割は？",
+        "answer":  "メール配送先サーバを指定する。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "PTRレコードの役割は？",
+        "answer":  "逆引きでIPアドレスをホスト名に対応付ける。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "TTLとは？",
+        "answer":  "DNSキャッシュを有効とする時間。",
+        "note":  "",
+        "importance":  "★★",
+        "tag":  "キャッシュ"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "NTPの正式名称は？",
+        "answer":  "Network Time Protocol。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "正式名称"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "NTPの役割は？",
+        "answer":  "ネットワーク上で時計を合わせること。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "NTPが使用するポート番号は？",
+        "answer":  "UDP 123番。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "ポート"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "NTPで使う基準時刻は？",
+        "answer":  "UTC（協定世界時）。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "時刻"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "stratumとは？",
+        "answer":  "NTPの時刻源からの階層を表す番号。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "階層"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "stratum 1とは？",
+        "answer":  "GPS・標準電波・原子時計などの正確な時刻源を参照する最上位NTPサーバ。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "階層"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "stratum 16は何を表す？",
+        "answer":  "最下位で、同期できない状態。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "階層"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "TIMEとNTPの大きな違いは？",
+        "answer":  "TIMEは通信遅延を考慮しないが、NTPは遅延を計測・補正する。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "比較"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "SNTPとは？",
+        "answer":  "NTPの複雑な処理を省略し、単発的な時刻合わせに特化した方式。",
+        "note":  "",
+        "importance":  "★★",
+        "tag":  "比較"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "SMTPの正式名称は？",
+        "answer":  "Simple Mail Transfer Protocol。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "正式名称"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "SMTPの役割は？",
+        "answer":  "電子メールを送信・転送すること。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "SMTPのポート番号は？",
+        "answer":  "TCP 25番。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "ポート"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "MUAとは？",
+        "answer":  "Message User Agent。メールクライアント側の役割。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "MTAとは？",
+        "answer":  "Message Transfer Agent。メールサーバ側の役割。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "SMTPコマンドの基本順序は？",
+        "answer":  "HELO → MAIL FROM → RCPT TO → DATA → 本文 → . → QUIT。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "順序"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "DATAの本文入力はどう終わらせる？",
+        "answer":  "ピリオド「.」だけの行を送る。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "SMTP応答コードの2xxは？",
+        "answer":  "成功。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答コード"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "SMTP応答コードの4xxは？",
+        "answer":  "一時的なエラー。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答コード"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "SMTP応答コードの5xxは？",
+        "answer":  "永続的なエラー。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答コード"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "POP3の正式名称は？",
+        "answer":  "Post Office Protocol 3。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "正式名称"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "POP3の役割は？",
+        "answer":  "メールサーバからメールを受信すること。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "POP3のポート番号は？",
+        "answer":  "TCP 110番。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "ポート"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "POP3の基本的なコマンド順序は？",
+        "answer":  "USER → PASS → STAT → LIST → RETR → QUIT。",
+        "note":  "必要な読み出しコマンドだけを使う場合もある",
+        "importance":  "★★★",
+        "tag":  "順序"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "STATは何を取得する？",
+        "answer":  "メールの総数と全体サイズ。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "LISTは何を取得する？",
+        "answer":  "メール番号と各メールのサイズ一覧。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "RETRは何をする？",
+        "answer":  "指定したメール番号の本文を取得する。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "POP3の正常応答と異常応答は？",
+        "answer":  "正常は+OK、異常は+ERR。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "POP3のPASSコマンドの問題点は？",
+        "answer":  "パスワードが平文で流れ、盗聴される危険がある。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "問題点"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "APOPとは？",
+        "answer":  "Challenge-Responseを使い、PASSの代わりにレスポンスを送る認証方式。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "APOPのレスポンスはどう作る？",
+        "answer":  "Challengeにパスワードを連結し、MD5でハッシュ値を求める。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "計算手順"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "ハッシュ関数の特徴を3つ答えよ。",
+        "answer":  "同じ入力は同じ出力、1bitでも変わると出力が変化、出力から元データをほぼ導けない。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "暗号"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "MD5のダイジェスト長は？",
+        "answer":  "128bit（16byte）。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "数値"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "SHA-256のダイジェスト長は？",
+        "answer":  "256bit（32byte）。",
+        "note":  "",
+        "importance":  "★★",
+        "tag":  "数値"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "SMTPの不正中継対策を3つ答えよ。",
+        "answer":  "POP before SMTP、SMTP AUTH、RBL。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "POP before SMTPの問題点は？",
+        "answer":  "認証のたびに通信量が増え、スループットが低下する。また、認証済みホストになりすます余地がある。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "問題点"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "SMTPを安全に使う構成は？",
+        "answer":  "SMTPS + SMTP AUTH、またはSMTP + TLS + SMTP AUTH。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "TELNETの正式名称は？",
+        "answer":  "TELecommunications NETwork Protocol。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "正式名称"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "TELNETの役割は？",
+        "answer":  "ネットワーク越しに機器へログインし、遠隔操作すること。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "TELNETのポート番号は？",
+        "answer":  "TCP 23番。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "ポート"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "NVTとは？",
+        "answer":  "異なる端末同士を共通形式で接続するネットワーク仮想端末。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "用語"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "TELNETのオプション交渉で使う4語は？",
+        "answer":  "WILL、DO、WON\u0027T、DON\u0027T。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "交渉"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "TELNETの問題点は？",
+        "answer":  "パスワードと通信内容が平文で流れ、盗聴される危険がある。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "問題点"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "SSHのポート番号は？",
+        "answer":  "TCP 22番。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "ポート"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "SSHで通信路暗号化に使う暗号は？",
+        "answer":  "共通鍵暗号。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "暗号"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "SSHで認証に使う暗号は？",
+        "answer":  "公開鍵暗号。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "暗号"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "TELNETとSSHの違いは？",
+        "answer":  "TELNETは平文、SSHは通信路を暗号化して安全に接続する。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "比較"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "SSH transport protocolの役割は？",
+        "answer":  "ホスト間のデータ交換と通信路暗号化。",
+        "note":  "",
+        "importance":  "★★",
+        "tag":  "SSH構成"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "SSH authentication protocolの役割は？",
+        "answer":  "公開鍵交換とホスト認証。",
+        "note":  "",
+        "importance":  "★★",
+        "tag":  "SSH構成"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTPの正式名称は？",
+        "answer":  "File Transfer Protocol。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "正式名称"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTPの役割は？",
+        "answer":  "コンピュータ間でファイルを転送すること。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTPが使う2本のTCPコネクションは？",
+        "answer":  "制御用コネクションとデータ用コネクション。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "接続"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTPの制御用ポートは？",
+        "answer":  "TCP 21番。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "ポート"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTPの基本的なデータ用ポートは？",
+        "answer":  "TCP 20番。",
+        "note":  "現在は必ずしも20番とは限らない",
+        "importance":  "★★★",
+        "tag":  "ポート"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "RETRとSTORの違いは？",
+        "answer":  "RETRはサーバから取得、STORはサーバへ保存。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "比較"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "TYPE AとTYPE Iの違いは？",
+        "answer":  "TYPE AはASCII、TYPE Iはバイナリ。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "比較"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "アクティブモードで使うコマンドは？",
+        "answer":  "PORT。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "モード"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "パッシブモードで使うコマンドは？",
+        "answer":  "PASV。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "モード"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTPのデータ用ポート計算式は？",
+        "answer":  "p1×256+p2。",
+        "note":  "例：79×256+156=20397",
+        "importance":  "★★★",
+        "tag":  "計算"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTP応答150は？",
+        "answer":  "データコネクションを開き、転送を開始する。",
+        "note":  "",
+        "importance":  "★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTP応答226は？",
+        "answer":  "転送完了。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "FTPの問題点は？",
+        "answer":  "通信内容、ID、パスワードが暗号化されず盗聴される危険がある。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "問題点"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "IPv4の主な問題点を3つ答えよ。",
+        "answer":  "アドレス枯渇、経路情報増大、インターネット利用形態の多様化への対応。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "背景"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "IPv4のアドレス長は？",
+        "answer":  "32bit。",
+        "note":  "約43億個",
+        "importance":  "★★★",
+        "tag":  "数値"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "IPv6のアドレス長は？",
+        "answer":  "128bit。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "数値"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "IPv6の未指定アドレスは？",
+        "answer":  "::/128。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "IPv6のループバックアドレスは？",
+        "answer":  "::1/128。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "IPv6のマルチキャストアドレスの範囲は？",
+        "answer":  "FF00::/8。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "IPv6のリンクローカルユニキャストの範囲は？",
+        "answer":  "FE80::/10。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "リンクローカルアドレスは何に使う？",
+        "answer":  "自動アドレス設定や近隣探索。単一リンク内で有効。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "廃止されたIPv6アドレスは？",
+        "answer":  "サイトローカルユニキャスト FEC0::/10。",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "ユニークローカルユニキャストの範囲は？",
+        "answer":  "FC00::/8。",
+        "note":  "",
+        "importance":  "★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "FF02::1は何の例？",
+        "answer":  "マルチキャストアドレス。",
+        "note":  "",
+        "importance":  "★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「DNS」とは？",
+        "answer":  "ホスト名とIPアドレスを対応付け、名前解決を行う仕組み",
+        "note":  "正式名称：Domain Name System / 数値・ポート：UDP 53 / TCP 53",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「名前解決」とは？",
+        "answer":  "人が扱いやすい名前と、通信に使うIPアドレスを対応付けること",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "処理"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「FQDN」とは？",
+        "answer":  "ルートからホスト名までを省略せずに表した完全修飾ドメイン名",
+        "note":  "正式名称：Fully Qualified Domain Name",
+        "importance":  "★★★",
+        "tag":  "用語"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「正引き」とは？",
+        "answer":  "ホスト名からIPアドレスを求める処理",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "処理"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「逆引き」とは？",
+        "answer":  "IPアドレスからホスト名を求める処理",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "処理"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「リゾルバ」とは？",
+        "answer":  "クライアントから問い合わせを受け、DNSサーバをたどって答えを取得する",
+        "note":  "正式名称：Resolver",
+        "importance":  "★★★",
+        "tag":  "サーバ"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「権威DNSサーバ」とは？",
+        "answer":  "担当するゾーンについて正式な回答を返すDNSサーバ",
+        "note":  "正式名称：Authoritative DNS Server",
+        "importance":  "★★★",
+        "tag":  "サーバ"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「ルートドメイン」とは？",
+        "answer":  "ドメイン名空間の最上位",
+        "note":  "正式名称：Root Domain / 数値・ポート：.",
+        "importance":  "★★★",
+        "tag":  "階層"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「TLD」とは？",
+        "answer":  "ルート直下の最上位ドメイン",
+        "note":  "正式名称：Top Level Domain",
+        "importance":  "★★★",
+        "tag":  "階層"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「ゾーン」とは？",
+        "answer":  "1台または複数の権威DNSサーバが管理する範囲",
+        "note":  "正式名称：Zone",
+        "importance":  "★★★",
+        "tag":  "管理"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「キャッシュ」とは？",
+        "answer":  "一度調べた名前解決結果を保存し、次回の問い合わせを高速化する",
+        "note":  "正式名称：Cache",
+        "importance":  "★★★",
+        "tag":  "高速化"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「TTL」とは？",
+        "answer":  "DNSキャッシュを有効とする時間",
+        "note":  "正式名称：Time To Live",
+        "importance":  "★★★",
+        "tag":  "高速化"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「プライマリDNSサーバ」とは？",
+        "answer":  "ゾーンデータファイルから情報を読み込む基準となるDNSサーバ",
+        "note":  "正式名称：Primary DNS Server / Master",
+        "importance":  "★★★",
+        "tag":  "サーバ"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「セカンダリDNSサーバ」とは？",
+        "answer":  "プライマリからゾーン情報を取得し、障害時にもサービスを継続する",
+        "note":  "正式名称：Secondary DNS Server / Slave",
+        "importance":  "★★★",
+        "tag":  "サーバ"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「Aレコード」とは？",
+        "answer":  "ホスト名をIPv4アドレスに対応付ける",
+        "note":  "正式名称：Address Record",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「AAAAレコード」とは？",
+        "answer":  "ホスト名をIPv6アドレスに対応付ける",
+        "note":  "正式名称：IPv6 Address Record",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「MXレコード」とは？",
+        "answer":  "そのドメインのメール配送先サーバを指定する",
+        "note":  "正式名称：Mail Exchange Record",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「CNAMEレコード」とは？",
+        "answer":  "別名を正式名に対応付ける",
+        "note":  "正式名称：Canonical Name Record",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「PTRレコード」とは？",
+        "answer":  "逆引きでIPアドレスをホスト名に対応付ける",
+        "note":  "正式名称：Pointer Record",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「NSレコード」とは？",
+        "answer":  "ゾーンを管理するDNSサーバを指定する",
+        "note":  "正式名称：Name Server Record",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "DNS",
+        "question":  "「SOAレコード」とは？",
+        "answer":  "ゾーンの基本情報や管理情報を示す",
+        "note":  "正式名称：Start of Authority Record",
+        "importance":  "★★★",
+        "tag":  "レコード"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「時刻同期」とは？",
+        "answer":  "ネットワーク上の複数のコンピュータの時計を合わせること",
+        "note":  "正式名称：Time Synchronization",
+        "importance":  "★★★",
+        "tag":  "目的"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「TIME」とは？",
+        "answer":  "正確な時刻を持つコンピュータへ問い合わせ、RTCを修正する",
+        "note":  "正式名称：TIME Protocol / 数値・ポート：TCP/UDP 37",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「NTP」とは？",
+        "answer":  "通信遅延を継続的に計測・補正して時刻を同期する",
+        "note":  "正式名称：Network Time Protocol / 数値・ポート：UDP 123",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「UTC」とは？",
+        "answer":  "NTPが送受信に使用する協定世界時",
+        "note":  "正式名称：Coordinated Universal Time",
+        "importance":  "★★★",
+        "tag":  "時刻"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「遅延補正」とは？",
+        "answer":  "通信時間による時刻誤差を小さくするための補正",
+        "note":  "正式名称：Delay Compensation",
+        "importance":  "★★★",
+        "tag":  "処理"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「stratum」とは？",
+        "answer":  "NTPサーバの時刻源からの階層を表す番号",
+        "note":  "正式名称：Stratum / 数値・ポート：1～16",
+        "importance":  "★★★",
+        "tag":  "階層"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「stratum 1」とは？",
+        "answer":  "GPS・標準電波・原子時計などの正確な時刻源を参照する最上位NTPサーバ",
+        "note":  "数値・ポート：1",
+        "importance":  "★★★",
+        "tag":  "階層"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「stratum 16」とは？",
+        "answer":  "最下位を表し、同期できない状態",
+        "note":  "数値・ポート：16",
+        "importance":  "★★★",
+        "tag":  "階層"
+    },
+    {
+        "id":  0,
+        "unit":  "NTP",
+        "question":  "「SNTP」とは？",
+        "answer":  "NTPの複雑な処理を省き、単発的な時刻問い合わせに特化した方式",
+        "note":  "正式名称：Simple Network Time Protocol",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「SMTP」とは？",
+        "answer":  "電子メールを送信・転送するテキストベースのプロトコル",
+        "note":  "正式名称：Simple Mail Transfer Protocol / 数値・ポート：TCP 25",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「MUA」とは？",
+        "answer":  "メールを作成・送信するクライアント側の役割",
+        "note":  "正式名称：Message User Agent",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「MTA」とは？",
+        "answer":  "メールを受け取り、転送するサーバ側の役割",
+        "note":  "正式名称：Message Transfer Agent",
+        "importance":  "★★★",
+        "tag":  "役割"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「HELO」とは？",
+        "answer":  "SMTPセッションを開始し、送信側ホスト・ドメインを通知する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「MAIL FROM」とは？",
+        "answer":  "送信元メールアドレスを通知する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「RCPT TO」とは？",
+        "answer":  "宛先メールアドレスを指定する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「DATA」とは？",
+        "answer":  "メール本文の入力を開始する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「ピリオドだけの行」とは？",
+        "answer":  "SMTPのDATA入力を終了する",
+        "note":  "正式名称：.",
+        "importance":  "★★★",
+        "tag":  "記号"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「QUIT」とは？",
+        "answer":  "SMTPセッションを終了する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「2xx」とは？",
+        "answer":  "要求が成功したときの応答",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「3xx」とは？",
+        "answer":  "成功したが追加情報が必要なときの応答",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「4xx」とは？",
+        "answer":  "一時的なエラーが発生したときの応答",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「5xx」とは？",
+        "answer":  "永続的なエラーが発生したときの応答",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「250」とは？",
+        "answer":  "要求された処理が完了したことを示す",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "SMTP",
+        "question":  "「451」とは？",
+        "answer":  "エラーにより要求が中断されたことを示す",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「POP3」とは？",
+        "answer":  "メールサーバのメールボックスからメールを受信するプロトコル",
+        "note":  "正式名称：Post Office Protocol 3 / 数値・ポート：TCP 110",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「ストア＆フォワード型」とは？",
+        "answer":  "未接続時はメールボックスに蓄積し、接続時に取り込む方式",
+        "note":  "正式名称：Store and Forward",
+        "importance":  "★★★",
+        "tag":  "方式"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「認証部」とは？",
+        "answer":  "USER・PASS・APOPなどで利用者を認証する状態",
+        "note":  "正式名称：Authorization State",
+        "importance":  "★★★",
+        "tag":  "状態"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「メール読み出し部」とは？",
+        "answer":  "メールの一覧取得・読み出し・削除などを行う状態",
+        "note":  "正式名称：Transaction State",
+        "importance":  "★★★",
+        "tag":  "状態"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「USER」とは？",
+        "answer":  "ユーザ名を送信する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「PASS」とは？",
+        "answer":  "パスワードを送信する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「APOP」とは？",
+        "answer":  "チャレンジレスポンスで認証する",
+        "note":  "正式名称：Authenticated Post Office Protocol",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「STAT」とは？",
+        "answer":  "メールの総数と全体サイズを取得する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「LIST」とは？",
+        "answer":  "メール番号と各メールのサイズ一覧を取得する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「RETR」とは？",
+        "answer":  "指定したメール番号の本文を取得する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「+OK」とは？",
+        "answer":  "POP3の正常応答",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「+ERR」とは？",
+        "answer":  "POP3の異常応答",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「平文」とは？",
+        "answer":  "暗号化されていない文字列。PASSや本文が盗聴される危険がある",
+        "note":  "正式名称：Plaintext",
+        "importance":  "★★★",
+        "tag":  "問題"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「Challenge-Response」とは？",
+        "answer":  "サーバのチャレンジとパスワードからレスポンスを生成して認証する",
+        "note":  "正式名称：Challenge-Response Authentication",
+        "importance":  "★★★",
+        "tag":  "認証"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「MD5」とは？",
+        "answer":  "128ビットのダイジェストを生成するハッシュ方式",
+        "note":  "正式名称：Message Digest Algorithm 5 / 数値・ポート：128 bit / 16 byte",
+        "importance":  "★★★",
+        "tag":  "暗号技術"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「不正中継」とは？",
+        "answer":  "第三者のメールを中継し、spam送信に悪用される問題",
+        "note":  "正式名称：Open Relay Abuse",
+        "importance":  "★★★",
+        "tag":  "問題"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「POP before SMTP」とは？",
+        "answer":  "SMTP送信前にPOP認証し、一定時間だけ送信を許可する方式",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「SMTP AUTH」とは？",
+        "answer":  "SMTP接続時に送信者を認証する仕組み",
+        "note":  "正式名称：SMTP Authentication",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「RBL」とは？",
+        "answer":  "第三者中継を許す悪質サーバのリストを使って受信を拒否する",
+        "note":  "正式名称：Realtime Blackhole List",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「SMTPS」とは？",
+        "answer":  "SMTP通信を暗号化して安全に送信する方式",
+        "note":  "正式名称：SMTP over SSL/TLS / 数値・ポート：TCP 465",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「TLS」とは？",
+        "answer":  "通信路を暗号化し、ID・パスワード・本文を保護する",
+        "note":  "正式名称：Transport Layer Security",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "POP3・メール安全",
+        "question":  "「POP3S」とは？",
+        "answer":  "POP3通信を暗号化して安全に受信する方式",
+        "note":  "正式名称：POP3 over SSL/TLS / 数値・ポート：TCP 995",
+        "importance":  "★★★",
+        "tag":  "対策"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「リモート接続」とは？",
+        "answer":  "離れた場所のサーバに接続して遠隔操作すること",
+        "note":  "正式名称：Remote Connection",
+        "importance":  "★★★",
+        "tag":  "概念"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「TELNET」とは？",
+        "answer":  "TCP/IPネットワーク越しに装置へログインし、設定変更や状態確認を行う",
+        "note":  "正式名称：TELecommunications NETwork Protocol / 数値・ポート：TCP 23",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「NVT」とは？",
+        "answer":  "異なる端末同士を共通形式で接続するネットワーク仮想端末",
+        "note":  "正式名称：Network Virtual Terminal",
+        "importance":  "★★★",
+        "tag":  "端末"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「オプション交渉」とは？",
+        "answer":  "文字セットやエコーモードなどの付加機能を使うか交渉する",
+        "note":  "正式名称：Option Negotiation",
+        "importance":  "★★★",
+        "tag":  "処理"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「WILL」とは？",
+        "answer":  "自分が指定オプションを実行する意思を示す",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "交渉"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「DO」とは？",
+        "answer":  "相手に指定オプションの実行を要求・許可する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "交渉"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「WON\u0027T」とは？",
+        "answer":  "自分が指定オプションを実行しないことを示す",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "交渉"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「DON\u0027T」とは？",
+        "answer":  "相手に指定オプションを実行しないよう求める",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "交渉"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「TELNETの平文通信」とは？",
+        "answer":  "パスワードとデータが暗号化されず、盗聴の危険がある",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "問題"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「SSH」とは？",
+        "answer":  "通信路を暗号化して安全にリモート接続するプロトコル",
+        "note":  "正式名称：Secure Shell / 数値・ポート：TCP 22",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「共通鍵暗号」とは？",
+        "answer":  "SSHで通信路を高速に暗号化するために使う",
+        "note":  "正式名称：Symmetric-key Cryptography",
+        "importance":  "★★★",
+        "tag":  "暗号"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「公開鍵暗号」とは？",
+        "answer":  "SSHの認証や鍵交換に使う",
+        "note":  "正式名称：Public-key Cryptography",
+        "importance":  "★★★",
+        "tag":  "暗号"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「ホスト認証」とは？",
+        "answer":  "通信相手が正しいホストか確認する",
+        "note":  "正式名称：Host Authentication",
+        "importance":  "★★★",
+        "tag":  "認証"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「ユーザ認証」とは？",
+        "answer":  "接続する利用者本人か確認する",
+        "note":  "正式名称：User Authentication",
+        "importance":  "★★★",
+        "tag":  "認証"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「SSH connection protocol」とは？",
+        "answer":  "ログインセッションやリモートコマンド実行を支援する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "SSH構成"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「SSH transport protocol」とは？",
+        "answer":  "ホスト間データ交換と通信路暗号化を行う",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "SSH構成"
+    },
+    {
+        "id":  0,
+        "unit":  "TELNET・SSH",
+        "question":  "「SSH authentication protocol」とは？",
+        "answer":  "公開鍵交換とホスト認証を行う",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "SSH構成"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「FTP」とは？",
+        "answer":  "コンピュータ間でファイルを転送するプロトコル",
+        "note":  "正式名称：File Transfer Protocol / 数値・ポート：TCP 21 / 20",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「制御用コネクション」とは？",
+        "answer":  "ログイン・コマンド・応答をやり取りするTCP接続",
+        "note":  "正式名称：Control Connection / 数値・ポート：TCP 21",
+        "importance":  "★★★",
+        "tag":  "接続"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「データ用コネクション」とは？",
+        "answer":  "ファイルや一覧データを転送するTCP接続",
+        "note":  "正式名称：Data Connection / 数値・ポート：TCP 20（基本）",
+        "importance":  "★★★",
+        "tag":  "接続"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「TYPE A」とは？",
+        "answer":  "ASCII形式で転送する",
+        "note":  "正式名称：ASCII Type",
+        "importance":  "★★★",
+        "tag":  "転送形式"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「TYPE I」とは？",
+        "answer":  "バイナリ形式で転送する",
+        "note":  "正式名称：Image / Binary Type",
+        "importance":  "★★★",
+        "tag":  "転送形式"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「PORT」とは？",
+        "answer":  "アクティブモードでクライアント側のデータ用ポートを指定する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「PASV」とは？",
+        "answer":  "パッシブモードへ切り替え、サーバ側の接続先を取得する",
+        "note":  "正式名称：Passive",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「STOR」とは？",
+        "answer":  "サーバへファイルを保存する",
+        "note":  "正式名称：Store",
+        "importance":  "★★★",
+        "tag":  "コマンド"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「アクティブモード」とは？",
+        "answer":  "サーバ側からクライアント指定ポートへデータ接続する",
+        "note":  "正式名称：Active Mode",
+        "importance":  "★★★",
+        "tag":  "モード"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「パッシブモード」とは？",
+        "answer":  "クライアント側からサーバ指定ポートへデータ接続する",
+        "note":  "正式名称：Passive Mode",
+        "importance":  "★★★",
+        "tag":  "モード"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「FTPポート計算」とは？",
+        "answer":  "PORT・PASV応答の末尾2値からデータ用ポートを計算する",
+        "note":  "数値・ポート：p1×256+p2",
+        "importance":  "★★★",
+        "tag":  "計算"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「150」とは？",
+        "answer":  "データコネクションを開き、転送を開始する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「226」とは？",
+        "answer":  "転送が完了したことを示す",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「227」とは？",
+        "answer":  "パッシブモードの接続先を通知する",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "応答"
+    },
+    {
+        "id":  0,
+        "unit":  "FTP",
+        "question":  "「FTPの平文通信」とは？",
+        "answer":  "通信内容、ID、パスワードが暗号化されず漏えいする危険がある",
+        "note":  "",
+        "importance":  "★★★",
+        "tag":  "問題"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「IPv4アドレス枯渇」とは？",
+        "answer":  "IPv4のアドレス数がインターネット普及に対して不足する問題",
+        "note":  "正式名称：IPv4 Address Exhaustion",
+        "importance":  "★★★",
+        "tag":  "問題"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「経路情報増大」とは？",
+        "answer":  "接続組織の増加で経路情報が増え、ルータのメモリ使用量増加や検索速度低下が起きる",
+        "note":  "正式名称：Routing Table Growth",
+        "importance":  "★★★",
+        "tag":  "問題"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「IPv4」とは？",
+        "answer":  "32ビットのIPアドレスを使用するIP",
+        "note":  "正式名称：Internet Protocol Version 4 / 数値・ポート：32 bit / 約43億",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「IPv6」とは？",
+        "answer":  "IPv4の問題を改善するために設計された128ビットのIP",
+        "note":  "正式名称：Internet Protocol Version 6 / 数値・ポート：128 bit",
+        "importance":  "★★★",
+        "tag":  "プロトコル"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「未指定アドレス」とは？",
+        "answer":  "アドレスが未設定であることを表す",
+        "note":  "正式名称：Unspecified Address / 数値・ポート：::/128",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「ループバックアドレス」とは？",
+        "answer":  "自分自身を表すIPv6アドレス",
+        "note":  "正式名称：Loopback Address / 数値・ポート：::1/128",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「マルチキャストアドレス」とは？",
+        "answer":  "インタフェースの集合を表し、グループへ同時送信する",
+        "note":  "正式名称：Multicast Address / 数値・ポート：FF00::/8",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「リンクローカルユニキャスト」とは？",
+        "answer":  "単一リンク内だけで使い、自動設定や近隣探索に利用する",
+        "note":  "正式名称：Link-local Unicast / 数値・ポート：FE80::/10",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「サイトローカルユニキャスト」とは？",
+        "answer":  "サイト内限定を目的としたアドレス",
+        "note":  "正式名称：Site-local Unicast / 数値・ポート：FEC0::/10",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「ユニークローカルユニキャスト」とは？",
+        "answer":  "組織内部などで利用するローカルIPv6アドレス",
+        "note":  "正式名称：Unique Local Unicast / 数値・ポート：FC00::/8",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    },
+    {
+        "id":  0,
+        "unit":  "IPv6",
+        "question":  "「グローバルユニキャスト」とは？",
+        "answer":  "インターネット上で一意に使うIPv6アドレス",
+        "note":  "正式名称：Global Unicast / 数値・ポート：上記以外",
+        "importance":  "★★★",
+        "tag":  "アドレス"
+    }
+]
