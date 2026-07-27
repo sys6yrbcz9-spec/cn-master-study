@@ -222,6 +222,16 @@ export default function Home() {
     }
   }
 
+  function exitQuiz() {
+    if (!window.confirm("クイズを途中で終了しますか？\n回答済みの結果は保存されます。")) return;
+    setQuiz([]);
+    setQuizIndex(0);
+    setSelectedAnswer(null);
+    setQuizScore(0);
+    setQuizDone(false);
+    changeView("home");
+  }
+
   return (
     <div className="app-shell">
       <header className="topbar">
@@ -366,7 +376,7 @@ export default function Home() {
               </div>
             ) : (
               <div className="quiz-stage">
-                <div className="quiz-progress"><div><span>QUESTION {String(quizIndex + 1).padStart(2, "0")}</span><b>{quizIndex + 1} / {quiz.length}</b></div><i><span style={{ width: `${((quizIndex + 1) / quiz.length) * 100}%` }} /></i></div>
+                <div className="quiz-progress"><div><span>QUESTION {String(quizIndex + 1).padStart(2, "0")}</span><div className="quiz-progress-actions"><b>{quizIndex + 1} / {quiz.length}</b><button type="button" onClick={exitQuiz} aria-label="クイズを途中で終了">× 終了</button></div></div><i><span style={{ width: `${((quizIndex + 1) / quiz.length) * 100}%` }} /></i></div>
                 <div className="question-panel">
                   <div className="question-meta"><span className={`unit-badge ${unitMeta[quiz[quizIndex].unit]?.tone}`}>{quiz[quizIndex].unit}</span><span>{quiz[quizIndex].importance}</span></div>
                   <h2>{quiz[quizIndex].question}</h2>

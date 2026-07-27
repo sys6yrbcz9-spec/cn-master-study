@@ -207,6 +207,9 @@ button { color: inherit; }
 .quiz-progress { margin-bottom: 15px; }
 .quiz-progress > div { display: flex; align-items: center; justify-content: space-between; font-size: 10px; font-weight: 900; color: var(--purple); }
 .quiz-progress > div b { color: #777b8d; }
+.quiz-progress-actions { display: flex; align-items: center; gap: 12px; }
+.quiz-progress-actions button { min-height: 30px; padding: 0 11px; border: 1px solid #dcdee8; border-radius: 8px; background: white; color: #72768a; font-size: 10px; font-weight: 800; cursor: pointer; transition: color .16s, border-color .16s, background .16s; }
+.quiz-progress-actions button:hover { color: #c44f6b; border-color: #efb3c1; background: #fff5f7; }
 .quiz-progress > i { display: block; height: 5px; background: #e1e0eb; border-radius: 99px; margin-top: 9px; overflow: hidden; }
 .quiz-progress > i span { height: 100%; display: block; background: linear-gradient(90deg, var(--purple), var(--cyan)); border-radius: inherit; transition: width .3s ease; }
 .question-panel { background: white; border: 1px solid var(--line); border-radius: 22px; padding: 30px; box-shadow: var(--shadow); }
