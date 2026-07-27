@@ -184,6 +184,15 @@ export default function Home() {
   }, [view, selectedAnswer, quizIndex, quizDone, settings.autoAdvance, settings.autoAdvanceDelay]);
 
   useEffect(() => {
+    if (view !== "quiz") return;
+    const frame = window.requestAnimationFrame(() => {
+      const activeElement = document.activeElement;
+      if (activeElement instanceof HTMLElement) activeElement.blur();
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [view, quizIndex]);
+
+  useEffect(() => {
     function handleShortcut(event: KeyboardEvent) {
       const target = event.target as HTMLElement;
       if (["INPUT", "SELECT", "TEXTAREA"].includes(target.tagName)) return;
@@ -474,7 +483,7 @@ export default function Home() {
                 <div className="question-panel">
                   <div className="question-meta"><span className={`unit-badge ${unitMeta[quiz[quizIndex].unit]?.tone}`}>{quiz[quizIndex].unit}</span><span>{quiz[quizIndex].importance}</span></div>
                   <h2>{quiz[quizIndex].question}</h2>
-                  <div className="choice-grid">
+                  <div className="choice-grid" key={`${quiz[quizIndex].id}-${quizIndex}`}>
                     {quiz[quizIndex].choices.map((choice, index) => {
                       const correct = selectedAnswer && choice === quiz[quizIndex].answer;
                       const wrong = selectedAnswer === choice && choice !== quiz[quizIndex].answer;
