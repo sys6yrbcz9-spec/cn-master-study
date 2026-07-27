@@ -1,6 +1,6 @@
 [
     {
-        "id":  0,
+        "id":  1,
         "unit":  "DNS",
         "category":  "プロトコル",
         "term":  "DNS",
@@ -11,7 +11,7 @@
         "note":  "通常の名前解決はUDP、ゾーン転送はTCP"
     },
     {
-        "id":  0,
+        "id":  2,
         "unit":  "DNS",
         "category":  "処理",
         "term":  "名前解決",
@@ -22,7 +22,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  3,
         "unit":  "DNS",
         "category":  "用語",
         "term":  "FQDN",
@@ -33,7 +33,7 @@
         "note":  "例：www.okinawa-ct.ac.jp"
     },
     {
-        "id":  0,
+        "id":  4,
         "unit":  "DNS",
         "category":  "処理",
         "term":  "正引き",
@@ -44,7 +44,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  5,
         "unit":  "DNS",
         "category":  "処理",
         "term":  "逆引き",
@@ -55,7 +55,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  6,
         "unit":  "DNS",
         "category":  "サーバ",
         "term":  "リゾルバ",
@@ -66,7 +66,7 @@
         "note":  "結果をキャッシュする"
     },
     {
-        "id":  0,
+        "id":  7,
         "unit":  "DNS",
         "category":  "サーバ",
         "term":  "権威DNSサーバ",
@@ -77,7 +77,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  8,
         "unit":  "DNS",
         "category":  "サーバ",
         "term":  "ルートDNSサーバ",
@@ -88,7 +88,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  9,
         "unit":  "DNS",
         "category":  "階層",
         "term":  "ルートドメイン",
@@ -99,7 +99,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  10,
         "unit":  "DNS",
         "category":  "階層",
         "term":  "TLD",
@@ -110,7 +110,7 @@
         "note":  "例：jp、com"
     },
     {
-        "id":  0,
+        "id":  11,
         "unit":  "DNS",
         "category":  "階層",
         "term":  "gTLD",
@@ -121,7 +121,7 @@
         "note":  "例：com、net"
     },
     {
-        "id":  0,
+        "id":  12,
         "unit":  "DNS",
         "category":  "階層",
         "term":  "ccTLD",
@@ -132,7 +132,7 @@
         "note":  "例：jp、uk"
     },
     {
-        "id":  0,
+        "id":  13,
         "unit":  "DNS",
         "category":  "階層",
         "term":  "SLD",
@@ -143,7 +143,7 @@
         "note":  "例：ac.jpのac"
     },
     {
-        "id":  0,
+        "id":  14,
         "unit":  "DNS",
         "category":  "管理",
         "term":  "ゾーン",
@@ -154,7 +154,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  15,
         "unit":  "DNS",
         "category":  "管理",
         "term":  "委譲",
@@ -165,7 +165,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  16,
         "unit":  "DNS",
         "category":  "高速化",
         "term":  "キャッシュ",
@@ -176,7 +176,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  17,
         "unit":  "DNS",
         "category":  "高速化",
         "term":  "TTL",
@@ -187,7 +187,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  18,
         "unit":  "DNS",
         "category":  "サーバ",
         "term":  "プライマリDNSサーバ",
@@ -198,7 +198,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  19,
         "unit":  "DNS",
         "category":  "サーバ",
         "term":  "セカンダリDNSサーバ",
@@ -209,7 +209,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  20,
         "unit":  "DNS",
         "category":  "ソフトウェア",
         "term":  "BIND",
@@ -220,7 +220,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  21,
         "unit":  "DNS",
         "category":  "レコード",
         "term":  "Aレコード",
@@ -231,7 +231,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  22,
         "unit":  "DNS",
         "category":  "レコード",
         "term":  "AAAAレコード",
@@ -242,7 +242,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  23,
         "unit":  "DNS",
         "category":  "レコード",
         "term":  "MXレコード",
@@ -253,7 +253,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  24,
         "unit":  "DNS",
         "category":  "レコード",
         "term":  "CNAMEレコード",
@@ -264,7 +264,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  25,
         "unit":  "DNS",
         "category":  "レコード",
         "term":  "PTRレコード",
@@ -275,7 +275,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  26,
         "unit":  "DNS",
         "category":  "レコード",
         "term":  "NSレコード",
@@ -286,7 +286,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  27,
         "unit":  "DNS",
         "category":  "レコード",
         "term":  "SOAレコード",
@@ -297,7 +297,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  28,
         "unit":  "DNS",
         "category":  "規格",
         "term":  "RFC 1034",
@@ -308,7 +308,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  29,
         "unit":  "DNS",
         "category":  "規格",
         "term":  "RFC 1035",
@@ -319,7 +319,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  30,
         "unit":  "NTP",
         "category":  "目的",
         "term":  "時刻同期",
@@ -330,7 +330,7 @@
         "note":  "メール・ログ・ファイル日時の信頼性に必要"
     },
     {
-        "id":  0,
+        "id":  31,
         "unit":  "NTP",
         "category":  "プロトコル",
         "term":  "TIME",
@@ -341,7 +341,7 @@
         "note":  "ネットワーク遅延を考慮しない"
     },
     {
-        "id":  0,
+        "id":  32,
         "unit":  "NTP",
         "category":  "規格",
         "term":  "RFC 868",
@@ -352,7 +352,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  33,
         "unit":  "NTP",
         "category":  "用語",
         "term":  "RTC",
@@ -363,7 +363,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  34,
         "unit":  "NTP",
         "category":  "時刻",
         "term":  "GMT",
@@ -374,7 +374,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  35,
         "unit":  "NTP",
         "category":  "プロトコル",
         "term":  "NTP",
@@ -385,7 +385,7 @@
         "note":  "UTCを使用"
     },
     {
-        "id":  0,
+        "id":  36,
         "unit":  "NTP",
         "category":  "規格",
         "term":  "RFC 1305",
@@ -396,7 +396,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  37,
         "unit":  "NTP",
         "category":  "時刻",
         "term":  "UTC",
@@ -407,7 +407,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  38,
         "unit":  "NTP",
         "category":  "処理",
         "term":  "遅延補正",
@@ -418,7 +418,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  39,
         "unit":  "NTP",
         "category":  "精度",
         "term":  "ミリ秒単位",
@@ -429,7 +429,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  40,
         "unit":  "NTP",
         "category":  "階層",
         "term":  "stratum",
@@ -440,7 +440,7 @@
         "note":  "下位になるほど数字が大きくなる"
     },
     {
-        "id":  0,
+        "id":  41,
         "unit":  "NTP",
         "category":  "階層",
         "term":  "stratum 1",
@@ -451,7 +451,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  42,
         "unit":  "NTP",
         "category":  "階層",
         "term":  "stratum 16",
@@ -462,7 +462,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  43,
         "unit":  "NTP",
         "category":  "時刻源",
         "term":  "GPS",
@@ -473,7 +473,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  44,
         "unit":  "NTP",
         "category":  "時刻源",
         "term":  "標準電波",
@@ -484,7 +484,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  45,
         "unit":  "NTP",
         "category":  "時刻源",
         "term":  "原子時計",
@@ -495,7 +495,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  46,
         "unit":  "NTP",
         "category":  "プロトコル",
         "term":  "SNTP",
@@ -506,7 +506,7 @@
         "note":  "混雑時に精度が下がる可能性"
     },
     {
-        "id":  0,
+        "id":  47,
         "unit":  "NTP",
         "category":  "規格",
         "term":  "RFC 2030",
@@ -517,7 +517,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  48,
         "unit":  "SMTP",
         "category":  "プロトコル",
         "term":  "SMTP",
@@ -528,7 +528,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  49,
         "unit":  "SMTP",
         "category":  "規格",
         "term":  "RFC 821",
@@ -539,7 +539,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  50,
         "unit":  "SMTP",
         "category":  "規格",
         "term":  "RFC 2821",
@@ -550,7 +550,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  51,
         "unit":  "SMTP",
         "category":  "規格",
         "term":  "RFC 5321",
@@ -561,7 +561,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  52,
         "unit":  "SMTP",
         "category":  "役割",
         "term":  "MUA",
@@ -572,7 +572,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  53,
         "unit":  "SMTP",
         "category":  "役割",
         "term":  "MTA",
@@ -583,7 +583,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  54,
         "unit":  "SMTP",
         "category":  "通信",
         "term":  "テキストベースプロトコル",
@@ -594,7 +594,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  55,
         "unit":  "SMTP",
         "category":  "コマンド",
         "term":  "HELO",
@@ -605,7 +605,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  56,
         "unit":  "SMTP",
         "category":  "コマンド",
         "term":  "MAIL FROM",
@@ -616,7 +616,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  57,
         "unit":  "SMTP",
         "category":  "コマンド",
         "term":  "RCPT TO",
@@ -627,7 +627,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  58,
         "unit":  "SMTP",
         "category":  "コマンド",
         "term":  "DATA",
@@ -638,7 +638,7 @@
         "note":  "行頭がピリオド1文字だけの行で終了"
     },
     {
-        "id":  0,
+        "id":  59,
         "unit":  "SMTP",
         "category":  "記号",
         "term":  "ピリオドだけの行",
@@ -649,7 +649,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  60,
         "unit":  "SMTP",
         "category":  "コマンド",
         "term":  "QUIT",
@@ -660,7 +660,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  61,
         "unit":  "SMTP",
         "category":  "改行",
         "term":  "CRLF",
@@ -671,7 +671,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  62,
         "unit":  "SMTP",
         "category":  "応答",
         "term":  "1xx",
@@ -682,7 +682,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  63,
         "unit":  "SMTP",
         "category":  "応答",
         "term":  "2xx",
@@ -693,7 +693,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  64,
         "unit":  "SMTP",
         "category":  "応答",
         "term":  "3xx",
@@ -704,7 +704,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  65,
         "unit":  "SMTP",
         "category":  "応答",
         "term":  "4xx",
@@ -715,7 +715,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  66,
         "unit":  "SMTP",
         "category":  "応答",
         "term":  "5xx",
@@ -726,7 +726,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  67,
         "unit":  "SMTP",
         "category":  "応答",
         "term":  "250",
@@ -737,7 +737,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  68,
         "unit":  "SMTP",
         "category":  "応答",
         "term":  "451",
@@ -748,7 +748,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  69,
         "unit":  "POP3・メール安全",
         "category":  "プロトコル",
         "term":  "POP3",
@@ -759,7 +759,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  70,
         "unit":  "POP3・メール安全",
         "category":  "規格",
         "term":  "RFC 1939",
@@ -770,7 +770,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  71,
         "unit":  "POP3・メール安全",
         "category":  "方式",
         "term":  "ストア＆フォワード型",
@@ -781,7 +781,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  72,
         "unit":  "POP3・メール安全",
         "category":  "状態",
         "term":  "認証部",
@@ -792,7 +792,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  73,
         "unit":  "POP3・メール安全",
         "category":  "状態",
         "term":  "メール読み出し部",
@@ -803,7 +803,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  74,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "USER",
@@ -814,7 +814,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  75,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "PASS",
@@ -825,7 +825,7 @@
         "note":  "平文で送信される"
     },
     {
-        "id":  0,
+        "id":  76,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "APOP",
@@ -836,7 +836,7 @@
         "note":  "PASSの代わりに使う"
     },
     {
-        "id":  0,
+        "id":  77,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "STAT",
@@ -847,7 +847,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  78,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "LIST",
@@ -858,7 +858,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  79,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "RETR",
@@ -869,7 +869,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  80,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "DELE",
@@ -880,7 +880,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  81,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "NOOP",
@@ -891,7 +891,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  82,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "RSET",
@@ -902,7 +902,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  83,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "TOP",
@@ -913,7 +913,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  84,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "UIDL",
@@ -924,7 +924,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  85,
         "unit":  "POP3・メール安全",
         "category":  "コマンド",
         "term":  "QUIT",
@@ -935,7 +935,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  86,
         "unit":  "POP3・メール安全",
         "category":  "応答",
         "term":  "+OK",
@@ -946,7 +946,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  87,
         "unit":  "POP3・メール安全",
         "category":  "応答",
         "term":  "+ERR",
@@ -957,7 +957,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  88,
         "unit":  "POP3・メール安全",
         "category":  "単位",
         "term":  "octet",
@@ -968,7 +968,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  89,
         "unit":  "POP3・メール安全",
         "category":  "保存場所",
         "term":  "mailbox",
@@ -979,7 +979,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  90,
         "unit":  "POP3・メール安全",
         "category":  "問題",
         "term":  "平文",
@@ -990,7 +990,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  91,
         "unit":  "POP3・メール安全",
         "category":  "認証",
         "term":  "Challenge-Response",
@@ -1001,7 +1001,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  92,
         "unit":  "POP3・メール安全",
         "category":  "認証",
         "term":  "Challenge",
@@ -1012,7 +1012,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  93,
         "unit":  "POP3・メール安全",
         "category":  "認証",
         "term":  "Response",
@@ -1023,7 +1023,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  94,
         "unit":  "POP3・メール安全",
         "category":  "暗号技術",
         "term":  "ハッシュ関数",
@@ -1034,7 +1034,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  95,
         "unit":  "POP3・メール安全",
         "category":  "暗号技術",
         "term":  "ダイジェスト",
@@ -1045,7 +1045,7 @@
         "note":  "ハッシュ値、メッセージダイジェストとも呼ぶ"
     },
     {
-        "id":  0,
+        "id":  96,
         "unit":  "POP3・メール安全",
         "category":  "暗号技術",
         "term":  "MD5",
@@ -1056,7 +1056,7 @@
         "note":  "APOPで利用。脆弱性がある"
     },
     {
-        "id":  0,
+        "id":  97,
         "unit":  "POP3・メール安全",
         "category":  "暗号技術",
         "term":  "SHA-256",
@@ -1067,7 +1067,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  98,
         "unit":  "POP3・メール安全",
         "category":  "問題",
         "term":  "不正中継",
@@ -1078,7 +1078,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  99,
         "unit":  "POP3・メール安全",
         "category":  "対策",
         "term":  "POP before SMTP",
@@ -1089,7 +1089,7 @@
         "note":  "通信量増加やなりすましの問題"
     },
     {
-        "id":  0,
+        "id":  100,
         "unit":  "POP3・メール安全",
         "category":  "対策",
         "term":  "SMTP AUTH",
@@ -1100,7 +1100,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  101,
         "unit":  "POP3・メール安全",
         "category":  "対策",
         "term":  "RBL",
@@ -1111,7 +1111,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  102,
         "unit":  "POP3・メール安全",
         "category":  "対策",
         "term":  "SMTPS",
@@ -1122,7 +1122,7 @@
         "note":  "SMTP AUTHと組み合わせる"
     },
     {
-        "id":  0,
+        "id":  103,
         "unit":  "POP3・メール安全",
         "category":  "対策",
         "term":  "TLS",
@@ -1133,7 +1133,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  104,
         "unit":  "POP3・メール安全",
         "category":  "対策",
         "term":  "POP3S",
@@ -1144,7 +1144,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  105,
         "unit":  "TELNET・SSH",
         "category":  "概念",
         "term":  "リモート接続",
@@ -1155,7 +1155,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  106,
         "unit":  "TELNET・SSH",
         "category":  "プロトコル",
         "term":  "TELNET",
@@ -1166,7 +1166,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  107,
         "unit":  "TELNET・SSH",
         "category":  "規格",
         "term":  "RFC 854～861",
@@ -1177,7 +1177,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  108,
         "unit":  "TELNET・SSH",
         "category":  "端末",
         "term":  "NVT",
@@ -1188,7 +1188,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  109,
         "unit":  "TELNET・SSH",
         "category":  "文字",
         "term":  "NVT-ASCII",
@@ -1199,7 +1199,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  110,
         "unit":  "TELNET・SSH",
         "category":  "制御文字",
         "term":  "NUL",
@@ -1210,7 +1210,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  111,
         "unit":  "TELNET・SSH",
         "category":  "制御文字",
         "term":  "BEL",
@@ -1221,7 +1221,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  112,
         "unit":  "TELNET・SSH",
         "category":  "制御文字",
         "term":  "BS",
@@ -1232,7 +1232,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  113,
         "unit":  "TELNET・SSH",
         "category":  "制御文字",
         "term":  "HT",
@@ -1243,7 +1243,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  114,
         "unit":  "TELNET・SSH",
         "category":  "制御文字",
         "term":  "LF",
@@ -1254,7 +1254,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  115,
         "unit":  "TELNET・SSH",
         "category":  "制御文字",
         "term":  "VT",
@@ -1265,7 +1265,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  116,
         "unit":  "TELNET・SSH",
         "category":  "制御文字",
         "term":  "FF",
@@ -1276,7 +1276,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  117,
         "unit":  "TELNET・SSH",
         "category":  "制御文字",
         "term":  "CR",
@@ -1287,7 +1287,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  118,
         "unit":  "TELNET・SSH",
         "category":  "処理",
         "term":  "オプション交渉",
@@ -1298,7 +1298,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  119,
         "unit":  "TELNET・SSH",
         "category":  "交渉",
         "term":  "WILL",
@@ -1309,7 +1309,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  120,
         "unit":  "TELNET・SSH",
         "category":  "交渉",
         "term":  "DO",
@@ -1320,7 +1320,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  121,
         "unit":  "TELNET・SSH",
         "category":  "交渉",
         "term":  "WON\u0027T",
@@ -1331,7 +1331,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  122,
         "unit":  "TELNET・SSH",
         "category":  "交渉",
         "term":  "DON\u0027T",
@@ -1342,7 +1342,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  123,
         "unit":  "TELNET・SSH",
         "category":  "オプション",
         "term":  "ECHO",
@@ -1353,7 +1353,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  124,
         "unit":  "TELNET・SSH",
         "category":  "問題",
         "term":  "TELNETの平文通信",
@@ -1364,7 +1364,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  125,
         "unit":  "TELNET・SSH",
         "category":  "プロトコル",
         "term":  "SSH",
@@ -1375,7 +1375,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  126,
         "unit":  "TELNET・SSH",
         "category":  "暗号",
         "term":  "共通鍵暗号",
@@ -1386,7 +1386,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  127,
         "unit":  "TELNET・SSH",
         "category":  "暗号",
         "term":  "公開鍵暗号",
@@ -1397,7 +1397,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  128,
         "unit":  "TELNET・SSH",
         "category":  "認証",
         "term":  "ホスト認証",
@@ -1408,7 +1408,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  129,
         "unit":  "TELNET・SSH",
         "category":  "認証",
         "term":  "ユーザ認証",
@@ -1419,7 +1419,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  130,
         "unit":  "TELNET・SSH",
         "category":  "SSH構成",
         "term":  "SSH connection protocol",
@@ -1430,7 +1430,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  131,
         "unit":  "TELNET・SSH",
         "category":  "SSH構成",
         "term":  "SSH transport protocol",
@@ -1441,7 +1441,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  132,
         "unit":  "TELNET・SSH",
         "category":  "SSH構成",
         "term":  "SSH authentication protocol",
@@ -1452,7 +1452,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  133,
         "unit":  "TELNET・SSH",
         "category":  "処理",
         "term":  "ネゴシエーション",
@@ -1463,7 +1463,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  134,
         "unit":  "FTP",
         "category":  "プロトコル",
         "term":  "FTP",
@@ -1474,7 +1474,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  135,
         "unit":  "FTP",
         "category":  "規格",
         "term":  "RFC 959",
@@ -1485,7 +1485,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  136,
         "unit":  "FTP",
         "category":  "接続",
         "term":  "制御用コネクション",
@@ -1496,7 +1496,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  137,
         "unit":  "FTP",
         "category":  "接続",
         "term":  "データ用コネクション",
@@ -1507,7 +1507,7 @@
         "note":  "コマンド実行ごとに確立"
     },
     {
-        "id":  0,
+        "id":  138,
         "unit":  "FTP",
         "category":  "認証",
         "term":  "anonymous",
@@ -1518,7 +1518,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  139,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "USER",
@@ -1529,7 +1529,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  140,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "PASS",
@@ -1540,7 +1540,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  141,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "PWD",
@@ -1551,7 +1551,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  142,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "CWD",
@@ -1562,7 +1562,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  143,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "CDUP",
@@ -1573,7 +1573,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  144,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "TYPE",
@@ -1584,7 +1584,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  145,
         "unit":  "FTP",
         "category":  "転送形式",
         "term":  "TYPE A",
@@ -1595,7 +1595,7 @@
         "note":  "主にテキスト"
     },
     {
-        "id":  0,
+        "id":  146,
         "unit":  "FTP",
         "category":  "転送形式",
         "term":  "TYPE I",
@@ -1606,7 +1606,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  147,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "PORT",
@@ -1617,7 +1617,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  148,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "PASV",
@@ -1628,7 +1628,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  149,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "LIST",
@@ -1639,7 +1639,7 @@
         "note":  "データコネクションを使用"
     },
     {
-        "id":  0,
+        "id":  150,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "NLST",
@@ -1650,7 +1650,7 @@
         "note":  "データコネクションを使用"
     },
     {
-        "id":  0,
+        "id":  151,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "RETR",
@@ -1661,7 +1661,7 @@
         "note":  "ダウンロード"
     },
     {
-        "id":  0,
+        "id":  152,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "STOR",
@@ -1672,7 +1672,7 @@
         "note":  "アップロード"
     },
     {
-        "id":  0,
+        "id":  153,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "DELE",
@@ -1683,7 +1683,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  154,
         "unit":  "FTP",
         "category":  "コマンド",
         "term":  "QUIT",
@@ -1694,7 +1694,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  155,
         "unit":  "FTP",
         "category":  "モード",
         "term":  "アクティブモード",
@@ -1705,7 +1705,7 @@
         "note":  "PORTを使用"
     },
     {
-        "id":  0,
+        "id":  156,
         "unit":  "FTP",
         "category":  "モード",
         "term":  "パッシブモード",
@@ -1716,7 +1716,7 @@
         "note":  "PASVを使用"
     },
     {
-        "id":  0,
+        "id":  157,
         "unit":  "FTP",
         "category":  "計算",
         "term":  "FTPポート計算",
@@ -1727,7 +1727,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  158,
         "unit":  "FTP",
         "category":  "応答",
         "term":  "150",
@@ -1738,7 +1738,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  159,
         "unit":  "FTP",
         "category":  "応答",
         "term":  "200",
@@ -1749,7 +1749,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  160,
         "unit":  "FTP",
         "category":  "応答",
         "term":  "221",
@@ -1760,7 +1760,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  161,
         "unit":  "FTP",
         "category":  "応答",
         "term":  "226",
@@ -1771,7 +1771,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  162,
         "unit":  "FTP",
         "category":  "応答",
         "term":  "227",
@@ -1782,7 +1782,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  163,
         "unit":  "FTP",
         "category":  "問題",
         "term":  "FTPの平文通信",
@@ -1793,7 +1793,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  164,
         "unit":  "IPv6",
         "category":  "問題",
         "term":  "IPv4アドレス枯渇",
@@ -1804,7 +1804,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  165,
         "unit":  "IPv6",
         "category":  "問題",
         "term":  "経路情報増大",
@@ -1815,7 +1815,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  166,
         "unit":  "IPv6",
         "category":  "問題",
         "term":  "利用形態の多様化",
@@ -1826,7 +1826,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  167,
         "unit":  "IPv6",
         "category":  "機能",
         "term":  "プラグ＆プレイ",
@@ -1837,7 +1837,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  168,
         "unit":  "IPv6",
         "category":  "組織",
         "term":  "IANA",
@@ -1848,7 +1848,7 @@
         "note":  "2011年2月3日にIPv4中央在庫枯渇"
     },
     {
-        "id":  0,
+        "id":  169,
         "unit":  "IPv6",
         "category":  "組織",
         "term":  "RIR",
@@ -1859,7 +1859,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  170,
         "unit":  "IPv6",
         "category":  "組織",
         "term":  "APNIC",
@@ -1870,7 +1870,7 @@
         "note":  "2011年4月15日に在庫枯渇"
     },
     {
-        "id":  0,
+        "id":  171,
         "unit":  "IPv6",
         "category":  "プロトコル",
         "term":  "IPv4",
@@ -1881,7 +1881,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  172,
         "unit":  "IPv6",
         "category":  "プロトコル",
         "term":  "IPv6",
@@ -1892,7 +1892,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  173,
         "unit":  "IPv6",
         "category":  "表記",
         "term":  "16進数表記",
@@ -1903,7 +1903,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  174,
         "unit":  "IPv6",
         "category":  "表記",
         "term":  "コロン区切り",
@@ -1914,7 +1914,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  175,
         "unit":  "IPv6",
         "category":  "アドレス",
         "term":  "未指定アドレス",
@@ -1925,7 +1925,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  176,
         "unit":  "IPv6",
         "category":  "アドレス",
         "term":  "ループバックアドレス",
@@ -1936,7 +1936,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  177,
         "unit":  "IPv6",
         "category":  "アドレス",
         "term":  "マルチキャストアドレス",
@@ -1947,7 +1947,7 @@
         "note":  "例：FF02::1"
     },
     {
-        "id":  0,
+        "id":  178,
         "unit":  "IPv6",
         "category":  "アドレス",
         "term":  "リンクローカルユニキャスト",
@@ -1958,7 +1958,7 @@
         "note":  "ルータがなくても利用可能"
     },
     {
-        "id":  0,
+        "id":  179,
         "unit":  "IPv6",
         "category":  "アドレス",
         "term":  "サイトローカルユニキャスト",
@@ -1969,7 +1969,7 @@
         "note":  "廃止"
     },
     {
-        "id":  0,
+        "id":  180,
         "unit":  "IPv6",
         "category":  "アドレス",
         "term":  "ユニークローカルユニキャスト",
@@ -1980,7 +1980,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  181,
         "unit":  "IPv6",
         "category":  "アドレス",
         "term":  "グローバルユニキャスト",
@@ -1991,7 +1991,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  182,
         "unit":  "IPv6",
         "category":  "操作",
         "term":  "ipconfig",
@@ -2002,7 +2002,7 @@
         "note":  ""
     },
     {
-        "id":  0,
+        "id":  183,
         "unit":  "IPv6",
         "category":  "機能",
         "term":  "近隣探索",

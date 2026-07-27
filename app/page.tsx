@@ -57,6 +57,7 @@ const emptyProgress: Progress = {
   streak: 0,
   lastStudyDate: "",
 };
+const progressStorageKey = "cn-master-progress-v2";
 
 function shuffle<T>(items: T[]) {
   const copy = [...items];
@@ -78,9 +79,18 @@ function createQuiz(unit: string, importantOnly: boolean, count = 10): QuizQuest
   return picked.map((card) => {
     const sameUnit = cards.filter((item) => item.id !== card.id && item.unit === card.unit);
     const pool = [...sameUnit, ...cards.filter((item) => item.id !== card.id && item.unit !== card.unit)];
-    const choices = shuffle(Array.from(new Set([card.answer, ...shuffle(pool).map((item) => item.answer)]))).slice(0, 4);
-    if (!choices.includes(card.answer)) choices[choices.length - 1] = card.answer;
-    return { ...card, choices: shuffle(choices) };
+    const seen = new Set([card.answer]);
+    const distractors: string[] = [];
+
+    for (const candidate of shuffle(pool)) {
+      const answer = candidate.answer.trim();
+      if (!answer || seen.has(answer)) continue;
+      seen.add(answer);
+      distractors.push(answer);
+      if (distractors.length === 3) break;
+    }
+
+    return { ...card, choices: shuffle([card.answer, ...distractors]) };
   });
 }
 
@@ -101,7 +111,7 @@ export default function Home() {
 
   useEffect(() => {
     try {
-      const saved = window.localStorage.getItem("cn-master-progress-v1");
+      const saved = window.localStorage.getItem(progressStorageKey);
       if (saved) setProgress({ ...emptyProgress, ...JSON.parse(saved) });
     } catch {
       // The app remains fully usable when browser storage is unavailable.
@@ -111,7 +121,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!hydrated) return;
-    window.localStorage.setItem("cn-master-progress-v1", JSON.stringify(progress));
+    window.localStorage.setItem(progressStorageKey, JSON.stringify(progress));
   }, [progress, hydrated]);
 
   const filteredCards = useMemo(() => {
