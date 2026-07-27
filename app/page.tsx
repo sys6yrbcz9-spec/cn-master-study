@@ -28,19 +28,30 @@ type Term = {
 type Progress = {
   mastered: number[];
   review: number[];
+  recent: number[];
+  schedule: Record<string, ReviewSchedule>;
   answered: number;
   correct: number;
   sessions: number;
   streak: number;
   lastStudyDate: string;
 };
-type QuizQuestion = Card & { choices: string[] };
+type ReviewSchedule = {
+  level: number;
+  dueAt: number;
+  lastSeenAt: number;
+  correctStreak: number;
+  lapses: number;
+};
+type QuizQuestion = Card & { choices: string[]; isRetry?: boolean };
 type Settings = {
   autoAdvance: boolean;
   autoAdvanceDelay: number;
   quizCount: number;
   reviewFirst: boolean;
   importantByDefault: boolean;
+  avoidRecent: boolean;
+  retryIncorrect: boolean;
 };
 
 const cards = cardsData as Card[];
@@ -58,6 +69,8 @@ const unitMeta: Record<string, { short: string; tone: string; icon: string }> = 
 const emptyProgress: Progress = {
   mastered: [],
   review: [],
+  recent: [],
+  schedule: {},
   answered: 0,
   correct: 0,
   sessions: 0,
@@ -72,6 +85,8 @@ const defaultSettings: Settings = {
   quizCount: 10,
   reviewFirst: true,
   importantByDefault: true,
+  avoidRecent: true,
+  retryIncorrect: true,
 };
 
 function shuffle<T>(items: T[]) {
@@ -87,30 +102,69 @@ function localDateKey(date = new Date()) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 }
 
-function createQuiz(unit: string, importantOnly: boolean, count = 10, reviewIds: number[] = []): QuizQuestion[] {
-  let source = cards.filter((card) => unit === "すべて" || card.unit === unit);
-  if (importantOnly) source = source.filter((card) => card.importance === "★★★");
-  const reviewSet = new Set(reviewIds);
-  const picked = [
-    ...shuffle(source.filter((card) => reviewSet.has(card.id))),
-    ...shuffle(source.filter((card) => !reviewSet.has(card.id))),
-  ].slice(0, Math.min(count, source.length));
-  return picked.map((card) => {
-    const sameUnit = cards.filter((item) => item.id !== card.id && item.unit === card.unit);
-    const pool = [...sameUnit, ...cards.filter((item) => item.id !== card.id && item.unit !== card.unit)];
-    const seen = new Set([card.answer]);
-    const distractors: string[] = [];
+function buildChoices(card: Card) {
+  const groups = [
+    cards.filter((item) => item.id !== card.id && item.unit === card.unit && item.tag === card.tag),
+    cards.filter((item) => item.id !== card.id && item.unit !== card.unit && item.tag === card.tag),
+    cards.filter((item) => item.id !== card.id && item.unit === card.unit && item.tag !== card.tag),
+    cards.filter((item) => item.id !== card.id && item.unit !== card.unit && item.tag !== card.tag),
+  ];
+  const seen = new Set([card.answer]);
+  const distractors: string[] = [];
 
-    for (const candidate of shuffle(pool)) {
+  for (const group of groups) {
+    for (const candidate of shuffle(group)) {
       const answer = candidate.answer.trim();
       if (!answer || seen.has(answer)) continue;
       seen.add(answer);
       distractors.push(answer);
-      if (distractors.length === 3) break;
+      if (distractors.length === 3) return shuffle([card.answer, ...distractors]);
     }
+  }
 
-    return { ...card, choices: shuffle([card.answer, ...distractors]) };
-  });
+  return shuffle([card.answer, ...distractors]);
+}
+
+function nextSchedule(current: ReviewSchedule | undefined, correct: boolean): ReviewSchedule {
+  const now = Date.now();
+  if (!correct) {
+    return { level: 0, dueAt: now, lastSeenAt: now, correctStreak: 0, lapses: (current?.lapses ?? 0) + 1 };
+  }
+  const level = Math.min((current?.level ?? 0) + 1, 5);
+  const intervalDays = [0, 1, 3, 7, 14, 30][level];
+  return {
+    level,
+    dueAt: now + intervalDays * 24 * 60 * 60 * 1000,
+    lastSeenAt: now,
+    correctStreak: (current?.correctStreak ?? 0) + 1,
+    lapses: current?.lapses ?? 0,
+  };
+}
+
+function createQuiz(
+  unit: string,
+  importantOnly: boolean,
+  count = 10,
+  reviewIds: number[] = [],
+  schedule: Record<string, ReviewSchedule> = {},
+  recentIds: number[] = [],
+): QuizQuestion[] {
+  let source = cards.filter((card) => unit === "すべて" || card.unit === unit);
+  if (importantOnly) source = source.filter((card) => card.importance === "★★★");
+  const now = Date.now();
+  const prioritySet = new Set([
+    ...reviewIds,
+    ...Object.entries(schedule).filter(([, item]) => item.dueAt <= now).map(([id]) => Number(id)),
+  ]);
+  const recentSet = new Set(recentIds.slice(-24));
+  const priority = shuffle(source.filter((card) => prioritySet.has(card.id)))
+    .sort((a, b) => (schedule[String(a.id)]?.lastSeenAt ?? 0) - (schedule[String(b.id)]?.lastSeenAt ?? 0));
+  const picked = [
+    ...priority,
+    ...shuffle(source.filter((card) => !prioritySet.has(card.id) && !recentSet.has(card.id))),
+    ...shuffle(source.filter((card) => !prioritySet.has(card.id) && recentSet.has(card.id))),
+  ].slice(0, Math.min(count, source.length));
+  return picked.map((card) => ({ ...card, choices: buildChoices(card) }));
 }
 
 export default function Home() {
@@ -175,6 +229,10 @@ export default function Home() {
   const masteredCount = progress.mastered.length;
   const completion = Math.round((masteredCount / cards.length) * 100);
   const accuracy = progress.answered ? Math.round((progress.correct / progress.answered) * 100) : 0;
+  const dueNowCount = new Set([
+    ...progress.review,
+    ...Object.entries(progress.schedule).filter(([, item]) => item.dueAt <= Date.now()).map(([id]) => Number(id)),
+  ]).size;
   const currentCard = filteredCards[cardIndex % Math.max(filteredCards.length, 1)];
 
   useEffect(() => {
@@ -252,6 +310,8 @@ export default function Home() {
         review: mastered
           ? current.review.filter((item) => item !== id)
           : Array.from(new Set([...current.review, id])),
+        recent: [...current.recent.filter((item) => item !== id), id].slice(-30),
+        schedule: { ...current.schedule, [String(id)]: nextSchedule(current.schedule[String(id)], mastered) },
         streak: nextStreak,
         lastStudyDate: today,
       };
@@ -263,7 +323,14 @@ export default function Home() {
   function startQuiz(unit = selectedUnit, important = importantOnly) {
     setSelectedUnit(unit);
     setImportantOnly(important);
-    setQuiz(createQuiz(unit, important, settings.quizCount, settings.reviewFirst ? progress.review : []));
+    setQuiz(createQuiz(
+      unit,
+      important,
+      settings.quizCount,
+      settings.reviewFirst ? progress.review : [],
+      settings.reviewFirst ? progress.schedule : {},
+      settings.avoidRecent ? progress.recent : [],
+    ));
     setQuizIndex(0);
     setSelectedAnswer(null);
     setQuizScore(0);
@@ -274,21 +341,45 @@ export default function Home() {
   function answerQuiz(answer: string) {
     if (selectedAnswer) return;
     setSelectedAnswer(answer);
-    const isCorrect = answer === quiz[quizIndex].answer;
+    const currentQuestion = quiz[quizIndex];
+    const isCorrect = answer === currentQuestion.answer;
     if (isCorrect) setQuizScore((score) => score + 1);
-    setProgress((current) => ({
-      ...current,
-      answered: current.answered + 1,
-      correct: current.correct + (isCorrect ? 1 : 0),
-      mastered: isCorrect
-        ? Array.from(new Set([...current.mastered, quiz[quizIndex].id]))
-        : current.mastered,
-      review: isCorrect
-        ? current.review.filter((id) => id !== quiz[quizIndex].id)
-        : Array.from(new Set([...current.review, quiz[quizIndex].id])),
-      lastStudyDate: localDateKey(),
-      streak: current.lastStudyDate === localDateKey() ? current.streak : Math.max(1, current.streak),
-    }));
+
+    if (!isCorrect && settings.retryIncorrect && !currentQuestion.isRetry) {
+      setQuiz((current) => {
+        const maxRetries = Math.max(1, Math.ceil(settings.quizCount * 0.3));
+        if (current.filter((item) => item.isRetry).length >= maxRetries) return current;
+        const insertAt = Math.min(quizIndex + 4, current.length);
+        const retryQuestion = { ...currentQuestion, choices: shuffle(currentQuestion.choices), isRetry: true };
+        return [...current.slice(0, insertAt), retryQuestion, ...current.slice(insertAt)];
+      });
+    }
+
+    setProgress((current) => {
+      const today = localDateKey();
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const nextStreak = current.lastStudyDate === today
+        ? current.streak
+        : current.lastStudyDate === localDateKey(yesterday)
+          ? current.streak + 1
+          : 1;
+      return {
+        ...current,
+        answered: current.answered + 1,
+        correct: current.correct + (isCorrect ? 1 : 0),
+        mastered: isCorrect
+          ? Array.from(new Set([...current.mastered, currentQuestion.id]))
+          : current.mastered,
+        review: isCorrect
+          ? current.review.filter((id) => id !== currentQuestion.id)
+          : Array.from(new Set([...current.review, currentQuestion.id])),
+        recent: [...current.recent.filter((id) => id !== currentQuestion.id), currentQuestion.id].slice(-30),
+        schedule: { ...current.schedule, [String(currentQuestion.id)]: nextSchedule(current.schedule[String(currentQuestion.id)], isCorrect) },
+        lastStudyDate: today,
+        streak: nextStreak,
+      };
+    });
   }
 
   function nextQuizQuestion() {
@@ -318,6 +409,8 @@ export default function Home() {
       quizCount: 10,
       reviewFirst: true,
       importantByDefault: true,
+      avoidRecent: true,
+      retryIncorrect: true,
     });
     setImportantOnly(true);
   }
@@ -372,7 +465,7 @@ export default function Home() {
             <section className="stats-row" aria-label="学習状況">
               <StatCard icon="◎" value={String(masteredCount)} label="覚えた問題" detail={`全${cards.length}問中`} tone="purple" />
               <StatCard icon="↗" value={`${accuracy}%`} label="クイズ正答率" detail={`${progress.answered}回答`} tone="cyan" />
-              <StatCard icon="◇" value={String(progress.review.length)} label="要復習" detail="間違えた問題" tone="orange" />
+              <StatCard icon="◇" value={String(dueNowCount)} label="要復習" detail="今日やる問題" tone="orange" />
               <StatCard icon="⚡" value={String(progress.streak)} label="連続学習" detail="日間ストリーク" tone="pink" />
             </section>
 
@@ -461,7 +554,7 @@ export default function Home() {
             <PageTitle kicker="EXAM PRACTICE" title="4択クイズ" description={`本番を意識して、${settings.quizCount}問をテンポよく。間違えた問題は自動で復習リストへ入ります。`} />
             {quiz.length === 0 ? (
               <div className="quiz-setup">
-                <div className="setup-copy"><span>{settings.quizCount} QUESTIONS</span><h2>出題範囲を選ぶ</h2><p>{settings.reviewFirst && progress.review.length ? `要復習の${progress.review.length}問から優先して出題します。` : "まずは重要度★★★から始めるのがおすすめです。"}</p></div>
+                <div className="setup-copy"><span>{settings.quizCount} QUESTIONS</span><h2>出題範囲を選ぶ</h2><p>{settings.reviewFirst && dueNowCount ? `今日の復習${dueNowCount}問から優先して出題します。` : "最近出た問題を避けながら、幅広く出題します。"}</p></div>
                 <div className="setup-options">
                   <UnitSelect value={selectedUnit} onChange={changeUnit} />
                   <label className="toggle"><input type="checkbox" checked={importantOnly} onChange={(event) => setImportantOnly(event.target.checked)} /><span /> ★★★だけ</label>
@@ -481,7 +574,7 @@ export default function Home() {
               <div className="quiz-stage">
                 <div className="quiz-progress"><div><span>QUESTION {String(quizIndex + 1).padStart(2, "0")}</span><div className="quiz-progress-actions"><b>{quizIndex + 1} / {quiz.length}</b><button type="button" onClick={exitQuiz} aria-label="クイズを途中で終了">× 終了</button></div></div><i><span style={{ width: `${((quizIndex + 1) / quiz.length) * 100}%` }} /></i></div>
                 <div className="question-panel">
-                  <div className="question-meta"><span className={`unit-badge ${unitMeta[quiz[quizIndex].unit]?.tone}`}>{quiz[quizIndex].unit}</span><span>{quiz[quizIndex].importance}</span></div>
+                  <div className="question-meta"><div><span className={`unit-badge ${unitMeta[quiz[quizIndex].unit]?.tone}`}>{quiz[quizIndex].unit}</span>{quiz[quizIndex].isRetry && <span className="retry-badge">再チャレンジ</span>}</div><span>{quiz[quizIndex].importance}</span></div>
                   <h2>{quiz[quizIndex].question}</h2>
                   <div className="choice-grid" key={`${quiz[quizIndex].id}-${quizIndex}`}>
                     {quiz[quizIndex].choices.map((choice, index) => {
@@ -508,7 +601,7 @@ export default function Home() {
             <PageTitle kicker="LEARNING SETTINGS" title="学習設定" description="自分のテンポと目的に合わせて、出題方法や自動進行を調整できます。設定はこの端末に保存されます。" />
 
             <section className="recommended-settings">
-              <div><span className="recommended-mark">◎</span><div><b>効率重視のおすすめ設定</b><p>10問・1.5秒で自動進行・要復習と重要問題を優先します。</p></div></div>
+              <div><span className="recommended-mark">◎</span><div><b>効率重視のおすすめ設定</b><p>復習を適切な間隔で出し、直近問題を避けながら弱点を再確認します。</p></div></div>
               <button className="button primary" onClick={applyRecommendedSettings}>おすすめ設定にする</button>
             </section>
 
@@ -532,7 +625,9 @@ export default function Home() {
                     {[5, 10, 20].map((count) => <button key={count} className={settings.quizCount === count ? "active" : ""} onClick={() => setSettings((current) => ({ ...current, quizCount: count }))}>{count}問</button>)}
                   </div>
                 </div>
-                <SettingToggle title="要復習を優先" description={`間違えた問題${progress.review.length ? `（現在${progress.review.length}問）` : ""}を先に出題します。`} checked={settings.reviewFirst} onChange={(checked) => setSettings((current) => ({ ...current, reviewFirst: checked }))} />
+                <SettingToggle title="要復習を優先" description={`今日が復習日の問題${dueNowCount ? `（現在${dueNowCount}問）` : ""}を先に出題します。`} checked={settings.reviewFirst} onChange={(checked) => setSettings((current) => ({ ...current, reviewFirst: checked }))} />
+                <SettingToggle title="最近の問題を避ける" description="直近24問をいったん除外し、出題範囲を広げます。" checked={settings.avoidRecent} onChange={(checked) => setSettings((current) => ({ ...current, avoidRecent: checked }))} />
+                <SettingToggle title="間違いを数問後に再出題" description={`1回につき最大${Math.max(1, Math.ceil(settings.quizCount * 0.3))}問まで、選択肢を並べ替えて再確認します。`} checked={settings.retryIncorrect} onChange={(checked) => setSettings((current) => ({ ...current, retryIncorrect: checked }))} />
                 <SettingToggle title="★★★を初期選択" description="新しいクイズを開いたとき重要問題だけを選びます。" checked={settings.importantByDefault} onChange={(checked) => { setSettings((current) => ({ ...current, importantByDefault: checked })); setImportantOnly(checked); }} />
               </section>
 
@@ -546,7 +641,7 @@ export default function Home() {
 
               <section className="settings-card data-settings">
                 <div className="settings-card-title"><span className="settings-icon pink">◇</span><div><h2>学習データ</h2><p>この端末に保存された記録</p></div></div>
-                <div className="data-summary"><span><b>{progress.mastered.length}</b>覚えた</span><span><b>{progress.review.length}</b>要復習</span><span><b>{progress.answered}</b>回答</span></div>
+                <div className="data-summary"><span><b>{progress.mastered.length}</b>覚えた</span><span><b>{dueNowCount}</b>今日の復習</span><span><b>{progress.answered}</b>回答</span></div>
                 <button className="danger-button" onClick={resetProgress}>学習記録をリセット</button>
               </section>
             </div>

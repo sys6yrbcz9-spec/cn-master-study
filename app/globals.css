@@ -214,6 +214,8 @@ button { color: inherit; }
 .quiz-progress > i span { height: 100%; display: block; background: linear-gradient(90deg, var(--purple), var(--cyan)); border-radius: inherit; transition: width .3s ease; }
 .question-panel { background: white; border: 1px solid var(--line); border-radius: 22px; padding: 30px; box-shadow: var(--shadow); }
 .question-meta { display: flex; justify-content: space-between; align-items: center; color: #efa047; font-size: 12px; letter-spacing: -2px; }
+.question-meta > div { display: flex; align-items: center; gap: 7px; letter-spacing: normal; }
+.retry-badge { padding: 5px 8px; border-radius: 7px; background: #fff0e4; color: #d97837; font-size: 8px; font-weight: 900; }
 .question-panel > h2 { max-width: 700px; margin: 31px auto 29px; text-align: center; font-size: clamp(20px, 3vw, 29px); line-height: 1.55; letter-spacing: -.03em; }
 .choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
 .choice { min-height: 78px; padding: 13px 15px; border: 1px solid #dedfe8; background: #fafafe; border-radius: 12px; cursor: pointer; text-align: left; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; transition: border .16s, background .16s, transform .16s; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
