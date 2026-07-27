@@ -518,8 +518,8 @@ export default function Home() {
                 <SettingToggle title="自動で次の問題へ" description="正誤を確認したあと、自動で次へ進みます。" checked={settings.autoAdvance} onChange={(checked) => setSettings((current) => ({ ...current, autoAdvance: checked }))} />
                 <div className={`setting-row stacked ${!settings.autoAdvance ? "is-disabled" : ""}`}>
                   <div><b>確認時間</b><p>答えを表示してから次へ進むまで</p></div>
-                  <div className="segmented-control" aria-label="自動進行までの時間">
-                    {[1500, 2500, 4000].map((delay) => <button key={delay} disabled={!settings.autoAdvance} className={settings.autoAdvanceDelay === delay ? "active" : ""} onClick={() => setSettings((current) => ({ ...current, autoAdvanceDelay: delay }))}>{delay / 1000}秒</button>)}
+                  <div className="segmented-control delay-control" aria-label="自動進行までの時間">
+                    {[700, 1500, 2500, 4000].map((delay) => <button key={delay} disabled={!settings.autoAdvance} className={settings.autoAdvanceDelay === delay ? "active" : ""} onClick={() => setSettings((current) => ({ ...current, autoAdvanceDelay: delay }))}>{delay / 1000}秒</button>)}
                   </div>
                 </div>
               </section>
