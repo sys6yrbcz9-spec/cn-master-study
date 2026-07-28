@@ -290,6 +290,16 @@ kbd { min-width: 24px; min-height: 22px; padding: 3px 6px; border: 1px solid #d8
 .data-summary { margin: 19px 0; padding: 14px; border-radius: 11px; background: #f8f8fb; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
 .data-summary span { color: #9195a6; font-size: 8px; }
 .data-summary b { display: block; color: var(--ink); font-size: 19px; }
+.backup-panel { margin: 0 0 13px; padding: 16px; border: 1px solid #e5e3f2; border-radius: 13px; background: #faf9ff; }
+.backup-copy b { color: var(--ink); font-size: 11px; }
+.backup-copy p { margin: 5px 0; color: #7f8293; font-size: 9px; line-height: 1.55; }
+.backup-copy small { color: #9b9ead; font-size: 8px; }
+.backup-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 13px; }
+.backup-button { position: relative; min-height: 42px; padding: 8px 10px; border: 1px solid transparent; border-radius: 9px; display: grid; place-items: center; text-align: center; font: inherit; font-size: 9px; font-weight: 900; line-height: 1.35; cursor: pointer; }
+.backup-button input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.primary-backup { background: var(--purple); color: white; }
+.restore-backup { border-color: #d9d4f1; background: white; color: var(--purple-dark); }
+.backup-message { margin: 10px 0 0; color: #3c8c6e; font-size: 9px; font-weight: 800; line-height: 1.5; }
 .danger-button { width: 100%; min-height: 41px; border: 1px solid #edccd4; border-radius: 9px; background: #fff7f9; color: #bd5069; font-size: 10px; font-weight: 900; cursor: pointer; }
 .mobile-nav { display: none; }
 
@@ -328,6 +338,7 @@ kbd { min-width: 24px; min-height: 22px; padding: 3px 6px; border: 1px solid #d8
   .content-page { padding: 40px 0 100px; }
   .toolbar, .study-controls { align-items: stretch; flex-wrap: wrap; }
   .search-box { flex-basis: 100%; }
+  .backup-actions { grid-template-columns: 1fr; }
   .select-wrap { flex: 1; min-width: 160px; }
   .term-row { grid-template-columns: 1fr auto; padding: 17px; gap: 14px; }
   .term-meaning { grid-column: 1 / -1; padding-left: 51px; }

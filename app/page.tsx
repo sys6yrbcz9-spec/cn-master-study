@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { type ChangeEvent, useEffect, useMemo, useState } from "react";
 import cardsData from "./data/cards.json";
 import termsData from "./data/terms.json";
 
@@ -53,6 +53,13 @@ type Settings = {
   avoidRecent: boolean;
   retryIncorrect: boolean;
 };
+type BackupData = {
+  app: "CN_MASTER";
+  version: 1;
+  exportedAt: string;
+  progress: Progress;
+  settings: Settings;
+};
 
 const cards = cardsData as Card[];
 const terms = termsData as Term[];
@@ -79,6 +86,7 @@ const emptyProgress: Progress = {
 };
 const progressStorageKey = "cn-master-progress-v2";
 const settingsStorageKey = "cn-master-settings-v1";
+const lastBackupStorageKey = "cn-master-last-backup-v1";
 const defaultSettings: Settings = {
   autoAdvance: true,
   autoAdvanceDelay: 1500,
@@ -182,6 +190,8 @@ export default function Home() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [quizScore, setQuizScore] = useState(0);
   const [quizDone, setQuizDone] = useState(false);
+  const [lastBackupAt, setLastBackupAt] = useState("");
+  const [backupMessage, setBackupMessage] = useState("");
 
   useEffect(() => {
     try {
@@ -195,6 +205,7 @@ export default function Home() {
       } else {
         setImportantOnly(defaultSettings.importantByDefault);
       }
+      setLastBackupAt(window.localStorage.getItem(lastBackupStorageKey) ?? "");
     } catch {
       // The app remains fully usable when browser storage is unavailable.
     }
@@ -421,6 +432,106 @@ export default function Home() {
     window.localStorage.removeItem(progressStorageKey);
   }
 
+  async function exportBackup() {
+    setBackupMessage("");
+    const backup: BackupData = {
+      app: "CN_MASTER",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      progress,
+      settings,
+    };
+    const fileName = `cn-master-backup-${localDateKey()}.json`;
+    const file = new File([JSON.stringify(backup, null, 2)], fileName, { type: "application/json" });
+
+    try {
+      let shared = false;
+      if (navigator.share && navigator.canShare?.({ files: [file] })) {
+        try {
+          await navigator.share({
+            title: "CN MASTER バックアップ",
+            text: "CN MASTERの学習データです。iCloud Driveへ保存してください。",
+            files: [file],
+          });
+          shared = true;
+        } catch (error) {
+          if (error instanceof DOMException && error.name === "AbortError") return;
+        }
+      }
+
+      if (!shared) {
+        const url = URL.createObjectURL(file);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = fileName;
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+
+      setLastBackupAt(backup.exportedAt);
+      window.localStorage.setItem(lastBackupStorageKey, backup.exportedAt);
+      setBackupMessage("バックアップを書き出しました。");
+    } catch {
+      setBackupMessage("書き出しに失敗しました。もう一度お試しください。");
+    }
+  }
+
+  async function restoreBackup(event: ChangeEvent<HTMLInputElement>) {
+    const input = event.currentTarget;
+    const file = input.files?.[0];
+    if (!file) return;
+    setBackupMessage("");
+
+    try {
+      const backup = JSON.parse(await file.text()) as Partial<BackupData>;
+      const savedProgress = backup.progress;
+      if (
+        backup.app !== "CN_MASTER" ||
+        backup.version !== 1 ||
+        !savedProgress ||
+        !Array.isArray(savedProgress.mastered) ||
+        !Array.isArray(savedProgress.review) ||
+        typeof savedProgress.answered !== "number" ||
+        typeof savedProgress.correct !== "number"
+      ) {
+        throw new Error("Invalid backup");
+      }
+
+      const shouldRestore = window.confirm(
+        `このバックアップを復元しますか？\n覚えた問題：${savedProgress.mastered.length}問\n回答数：${savedProgress.answered}回`,
+      );
+      if (!shouldRestore) return;
+
+      const restoredProgress: Progress = {
+        ...emptyProgress,
+        ...savedProgress,
+        recent: Array.isArray(savedProgress.recent) ? savedProgress.recent : [],
+        schedule: savedProgress.schedule && typeof savedProgress.schedule === "object" ? savedProgress.schedule : {},
+      };
+      const restoredSettings: Settings = { ...defaultSettings, ...(backup.settings ?? {}) };
+      setProgress(restoredProgress);
+      setSettings(restoredSettings);
+      setImportantOnly(restoredSettings.importantByDefault);
+      setBackupMessage("バックアップを復元しました。");
+
+      if (backup.exportedAt) {
+        setLastBackupAt(backup.exportedAt);
+        window.localStorage.setItem(lastBackupStorageKey, backup.exportedAt);
+      }
+    } catch {
+      setBackupMessage("CN MASTERのバックアップファイルを読み込めませんでした。");
+    } finally {
+      input.value = "";
+    }
+  }
+
+  const lastBackupDate = new Date(lastBackupAt);
+  const lastBackupLabel = lastBackupAt && !Number.isNaN(lastBackupDate.getTime())
+    ? new Intl.DateTimeFormat("ja-JP", { dateStyle: "medium", timeStyle: "short" }).format(lastBackupDate)
+    : "まだありません";
+
   return (
     <div className="app-shell">
       <header className="topbar">
@@ -642,6 +753,21 @@ export default function Home() {
               <section className="settings-card data-settings">
                 <div className="settings-card-title"><span className="settings-icon pink">◇</span><div><h2>学習データ</h2><p>この端末に保存された記録</p></div></div>
                 <div className="data-summary"><span><b>{progress.mastered.length}</b>覚えた</span><span><b>{dueNowCount}</b>今日の復習</span><span><b>{progress.answered}</b>回答</span></div>
+                <div className="backup-panel">
+                  <div className="backup-copy">
+                    <b>端末間バックアップ</b>
+                    <p>iPhoneで書き出してiCloud Driveへ保存し、iPadで復元できます。</p>
+                    <small>最終バックアップ：{lastBackupLabel}</small>
+                  </div>
+                  <div className="backup-actions">
+                    <button className="backup-button primary-backup" onClick={exportBackup}>↑ バックアップを書き出す</button>
+                    <label className="backup-button restore-backup">
+                      ↓ バックアップから復元
+                      <input type="file" accept=".json,application/json" onChange={restoreBackup} />
+                    </label>
+                  </div>
+                  {backupMessage && <p className="backup-message" role="status">{backupMessage}</p>}
+                </div>
                 <button className="danger-button" onClick={resetProgress}>学習記録をリセット</button>
               </section>
             </div>
