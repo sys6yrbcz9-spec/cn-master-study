@@ -61,7 +61,14 @@ type BackupData = {
   settings: Settings;
 };
 
-const cards = cardsData as Card[];
+function cleanAnswerText(answer: string) {
+  return answer.trim().replace(/[。．.]+$/u, "");
+}
+
+const cards = (cardsData as Card[]).map((card) => ({
+  ...card,
+  answer: cleanAnswerText(card.answer),
+}));
 const terms = termsData as Term[];
 const units = ["すべて", ...Array.from(new Set(cards.map((card) => card.unit)))];
 const unitMeta: Record<string, { short: string; tone: string; icon: string }> = {
@@ -117,12 +124,12 @@ function buildChoices(card: Card) {
     cards.filter((item) => item.id !== card.id && item.unit === card.unit && item.tag !== card.tag),
     cards.filter((item) => item.id !== card.id && item.unit !== card.unit && item.tag !== card.tag),
   ];
-  const seen = new Set([card.answer]);
+  const seen = new Set([cleanAnswerText(card.answer)]);
   const distractors: string[] = [];
 
   for (const group of groups) {
     for (const candidate of shuffle(group)) {
-      const answer = candidate.answer.trim();
+      const answer = cleanAnswerText(candidate.answer);
       if (!answer || seen.has(answer)) continue;
       seen.add(answer);
       distractors.push(answer);
