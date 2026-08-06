@@ -1744,5 +1744,131 @@
         "note":  "正式名称：Global Unicast / 数値・ポート：上記以外",
         "importance":  "★★★",
         "tag":  "アドレス"
+    },
+    {
+        "id": 195,
+        "unit": "IPv6",
+        "question": "IPv6の基本ヘッダ長は？",
+        "answer": "40byteの固定長。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "数値"
+    },
+    {
+        "id": 196,
+        "unit": "IPv6",
+        "question": "トラフィック・クラスの役割は？",
+        "answer": "パケットの優先度やQoSを指定する。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "ヘッダ"
+    },
+    {
+        "id": 197,
+        "unit": "IPv6",
+        "question": "フロー・ラベルの役割は？",
+        "answer": "同じ通信の流れを識別し、経路品質や優先処理に利用する。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "ヘッダ"
+    },
+    {
+        "id": 198,
+        "unit": "IPv6",
+        "question": "ペイロード長にIPv6基本ヘッダ40byteは含まれる？",
+        "answer": "含まれない。拡張ヘッダと上位データの合計長を示す。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "ヘッダ"
+    },
+    {
+        "id": 199,
+        "unit": "IPv6",
+        "question": "次ヘッダは何を示す？",
+        "answer": "次に続く拡張ヘッダやTCP・UDPなどの種類。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "ヘッダ"
+    },
+    {
+        "id": 200,
+        "unit": "IPv6",
+        "question": "中継制限はIPv4の何に相当する？",
+        "answer": "TTL。",
+        "note": "ルータ通過ごとに1減り、0で破棄",
+        "importance": "★★★",
+        "tag": "比較"
+    },
+    {
+        "id": 201,
+        "unit": "IPv6",
+        "question": "IPv6でヘッダチェックサムを廃止した目的は？",
+        "answer": "経路上のルータ処理を軽減するため。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "理由"
+    },
+    {
+        "id": 202,
+        "unit": "IPv6",
+        "question": "MTUとは？",
+        "answer": "1つのリンクで送信できる最大データサイズ。",
+        "note": "Maximum Transfer Unit",
+        "importance": "★★★",
+        "tag": "転送"
+    },
+    {
+        "id": 203,
+        "unit": "IPv6",
+        "question": "Path MTU Discoveryとは？",
+        "answer": "通信経路上の最小MTUを探索する機能。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "転送"
+    },
+    {
+        "id": 204,
+        "unit": "IPv6",
+        "question": "IPv6では経路途中のルータが細分化する？",
+        "answer": "しない。送信元が最小MTUに合わせて送る。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "転送"
+    },
+    {
+        "id": 205,
+        "unit": "IPv6",
+        "question": "ステートレス自動設定とは？",
+        "answer": "専用サーバで状態管理せず、端末が自分でIPv6アドレスを設定する方式。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "自動設定"
+    },
+    {
+        "id": 206,
+        "unit": "IPv6",
+        "question": "ステートフル自動設定とは？",
+        "answer": "DHCPv6サーバが状態を管理してIPv6アドレスを割り当てる方式。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "自動設定"
+    },
+    {
+        "id": 207,
+        "unit": "IPv6",
+        "question": "近隣探索プロトコルの主な用途を3つ答えよ。",
+        "answer": "IPアドレス自動設定、データリンク層アドレス解決、近隣ルータ探索。",
+        "note": "",
+        "importance": "★★★",
+        "tag": "自動設定"
+    },
+    {
+        "id": 208,
+        "unit": "IPv6",
+        "question": "IPv5が存在しないように見える理由は？",
+        "answer": "version番号5をST-IIが使用していたため。",
+        "note": "",
+        "importance": "★★",
+        "tag": "背景"
     }
 ]

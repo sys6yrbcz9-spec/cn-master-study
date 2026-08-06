@@ -2011,5 +2011,181 @@
         "numeric":  "",
         "importance":  "★★",
         "note":  "リンクローカルアドレスを使用"
+    },
+    {
+        "id": 184,
+        "unit": "IPv6",
+        "category": "ヘッダ",
+        "term": "IPv6基本ヘッダ",
+        "english": "IPv6 Basic Header",
+        "meaning": "IPv6の基本部分を構成する固定長ヘッダ",
+        "numeric": "40 byte",
+        "importance": "★★★",
+        "note": "固定長でルータ処理を軽減"
+    },
+    {
+        "id": 185,
+        "unit": "IPv6",
+        "category": "ヘッダ",
+        "term": "トラフィック・クラス",
+        "english": "Traffic Class",
+        "meaning": "パケット送信時の優先度やQoSを指定する",
+        "numeric": "8 bit",
+        "importance": "★★★",
+        "note": "IPv4のTOSに相当"
+    },
+    {
+        "id": 186,
+        "unit": "IPv6",
+        "category": "ヘッダ",
+        "term": "フロー・ラベル",
+        "english": "Flow Label",
+        "meaning": "同じ通信の流れを識別し、経路品質や優先処理に利用する",
+        "numeric": "20 bit",
+        "importance": "★★★",
+        "note": "IPv4には対応項目なし"
+    },
+    {
+        "id": 187,
+        "unit": "IPv6",
+        "category": "ヘッダ",
+        "term": "ペイロード長",
+        "english": "Payload Length",
+        "meaning": "拡張ヘッダと上位データの合計長を示す",
+        "numeric": "16 bit",
+        "importance": "★★★",
+        "note": "IPv6基本ヘッダ40byteは含まない"
+    },
+    {
+        "id": 188,
+        "unit": "IPv6",
+        "category": "ヘッダ",
+        "term": "次ヘッダ",
+        "english": "Next Header",
+        "meaning": "次に続く拡張ヘッダやTCP・UDPなどの種類を示す",
+        "numeric": "8 bit",
+        "importance": "★★★",
+        "note": "IPv4のプロトコルフィールドに相当"
+    },
+    {
+        "id": 189,
+        "unit": "IPv6",
+        "category": "ヘッダ",
+        "term": "中継制限",
+        "english": "Hop Limit",
+        "meaning": "通過可能なルータ数を制限する",
+        "numeric": "8 bit",
+        "importance": "★★★",
+        "note": "IPv4のTTLに相当。0で破棄"
+    },
+    {
+        "id": 190,
+        "unit": "IPv6",
+        "category": "ヘッダ",
+        "term": "拡張ヘッダ",
+        "english": "Extension Header",
+        "meaning": "必要な機能をIPv6基本ヘッダの後ろへ追加する仕組み",
+        "numeric": "",
+        "importance": "★★★",
+        "note": "高い拡張性を実現"
+    },
+    {
+        "id": 191,
+        "unit": "IPv6",
+        "category": "改善",
+        "term": "ヘッダチェックサム廃止",
+        "english": "",
+        "meaning": "IPv6では基本ヘッダのチェックサムをなくし、ルータの処理を軽減した",
+        "numeric": "",
+        "importance": "★★★",
+        "note": ""
+    },
+    {
+        "id": 192,
+        "unit": "IPv6",
+        "category": "転送",
+        "term": "MTU",
+        "english": "Maximum Transfer Unit",
+        "meaning": "1つのリンクで送信できる最大データサイズ",
+        "numeric": "",
+        "importance": "★★★",
+        "note": "MTUを超えるIPデータグラムは送れない"
+    },
+    {
+        "id": 193,
+        "unit": "IPv6",
+        "category": "転送",
+        "term": "Path MTU Discovery",
+        "english": "",
+        "meaning": "通信経路上にある最小MTUを探索する機能",
+        "numeric": "",
+        "importance": "★★★",
+        "note": "IPv6では経路途中のルータが細分化しない"
+    },
+    {
+        "id": 194,
+        "unit": "IPv6",
+        "category": "自動設定",
+        "term": "アドレス自動設定",
+        "english": "Address Autoconfiguration",
+        "meaning": "IPv6アドレスなどの設定作業を自動化する仕組み",
+        "numeric": "",
+        "importance": "★★",
+        "note": ""
+    },
+    {
+        "id": 195,
+        "unit": "IPv6",
+        "category": "自動設定",
+        "term": "ステートレス・アドレス自動設定",
+        "english": "Stateless Address Autoconfiguration",
+        "meaning": "専用サーバで状態管理せず、端末が自分でIPv6アドレスを設定する方式",
+        "numeric": "",
+        "importance": "★★★",
+        "note": ""
+    },
+    {
+        "id": 196,
+        "unit": "IPv6",
+        "category": "自動設定",
+        "term": "ステートフル・アドレス自動設定",
+        "english": "Stateful Address Autoconfiguration",
+        "meaning": "DHCPv6サーバが状態を管理してIPv6アドレスを割り当てる方式",
+        "numeric": "",
+        "importance": "★★★",
+        "note": "DHCPv6を使用"
+    },
+    {
+        "id": 197,
+        "unit": "IPv6",
+        "category": "自動設定",
+        "term": "DHCPv6",
+        "english": "Dynamic Host Configuration Protocol for IPv6",
+        "meaning": "IPv6端末へアドレスや設定情報を配布する仕組み",
+        "numeric": "",
+        "importance": "★★★",
+        "note": "ステートフル方式で使用"
+    },
+    {
+        "id": 198,
+        "unit": "IPv6",
+        "category": "自動設定",
+        "term": "近隣探索プロトコル",
+        "english": "Neighbor Discovery Protocol",
+        "meaning": "IPアドレス自動設定、データリンク層アドレス解決、近隣ルータ探索に使う",
+        "numeric": "",
+        "importance": "★★★",
+        "note": ""
+    },
+    {
+        "id": 199,
+        "unit": "IPv6",
+        "category": "バージョン",
+        "term": "ST-II",
+        "english": "Stream Protocol version 2",
+        "meaning": "IPヘッダのversion番号5を使用していたプロトコル",
+        "numeric": "version 5",
+        "importance": "★★",
+        "note": "IPv5が存在しないように見える理由"
     }
 ]

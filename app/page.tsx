@@ -563,7 +563,7 @@ export default function Home() {
               <div className="hero-copy">
                 <div className="eyebrow"><span className="pulse-dot" /> 期末試験対策モード</div>
                 <h1>ネットワークを、<br /><em>得点源</em>に変える。</h1>
-                <p>重要用語からポート番号、通信の流れまで。授業資料に沿った全194問で、迷う知識を「答えられる知識」へ。</p>
+                <p>重要用語からポート番号、通信の流れまで。授業資料に沿った全{cards.length}問で、迷う知識を「答えられる知識」へ。</p>
                 <div className="hero-actions">
                   <button className="button primary" onClick={() => startQuiz("すべて", settings.importantByDefault)}>今日の{settings.quizCount}問を始める <span>→</span></button>
                   <button className="button secondary" onClick={() => changeView("cards")}>暗記カードで復習</button>
@@ -619,7 +619,7 @@ export default function Home() {
 
         {view === "terms" && (
           <div className="page content-page">
-            <PageTitle kicker="TERM LIBRARY" title="用語帳" description="183語を、意味・正式名称・数値とセットで確認。検索すれば欲しい知識にすぐ届きます。" />
+            <PageTitle kicker="TERM LIBRARY" title="用語帳" description={`${terms.length}語を、意味・正式名称・数値とセットで確認。検索すれば欲しい知識にすぐ届きます。`} />
             <div className="toolbar">
               <label className="search-box"><span>⌕</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="用語・意味・ポート番号を検索" /></label>
               <UnitSelect value={selectedUnit} onChange={changeUnit} />
